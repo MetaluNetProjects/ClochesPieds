@@ -1,11 +1,11 @@
-#N canvas 187 73 276 72 10;
-#X obj 0 0 cnv 15 40 26 empty empty ???? 1 5 0 14 -233017 -66577 0
+#N canvas 2119 667 298 119 10;
+#X obj 1 2 cnv 15 40 26 empty empty empty 1 5 0 14 -233017 -66577 0
 ;
-#X obj 11 25 unsig~;
-#X obj 11 5 inlet~;
-#X floatatom 11 44 0 0 0 0 - - -;
-#X obj 109 39 outlet;
-#X connect 1 0 3 0;
+#X obj 88 4 inlet~;
+#X floatatom 3 9 7 0 0 0 - - -;
+#X obj 186 38 outlet;
+#X obj 88 24 unsig~ 50;
 #X connect 1 0 4 0;
-#X connect 2 0 1 0;
-#X coords 0 0 1 1 20 20 1;
+#X connect 4 0 2 0;
+#X connect 4 0 3 0;
+#X coords 0 0 1 1 88 36 2 0 0;

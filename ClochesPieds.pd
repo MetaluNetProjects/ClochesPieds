@@ -1,6 +1,6 @@
-#N canvas 678 115 547 491 10;
+#N canvas 2088 562 644 519 10;
 #X declare -path Fraise;
-#N canvas 1467 536 402 323 Interface 1;
+#N canvas 1992 888 402 323 Interface 1;
 #X obj 0 1 cnv 15 400 320 empty empty empty 20 12 0 14 -90881 -66577
 0;
 #X obj 239 13 cnv 15 120 120 empty empty Myosotis 20 12 2 14 -225271
@@ -8,13 +8,13 @@
 #X obj 284 49 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 317 49 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 -262131
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 317 82 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 251 49 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 284 82 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 -228992
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 251 82 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 225 211 cnv 15 100 100 empty empty Répiétiteur 5 12 2 14 -225271
@@ -70,7 +70,7 @@
 #X obj 357 169 tgl 30 0 \$0-telludiing-snd \$0-telludiing-rcv diing
 2 15 1 10 -262144 -1 -1 0 1;
 #X restore 412 9 pd Interface;
-#N canvas 13 213 245 292 interfguts 0;
+#N canvas 72 297 245 292 interfguts 0;
 #X obj 47 13 dispatch \$0-s 1 4;
 #X obj 47 32 dispatch \$0-rep 1 4;
 #N canvas 197 0 450 258 8bits 0;
@@ -542,7 +542,7 @@
 #X connect 27 0 1 0;
 #X connect 29 0 23 0;
 #X restore 49 188 pd Repie;
-#N canvas 100 405 450 300 Roto 0;
+#N canvas 72 405 450 300 Roto 0;
 #X msg 107 160 1 \$1;
 #X msg 143 156 2 \$1;
 #X msg 379 147 3 \$1;
@@ -642,32 +642,36 @@
 #X obj 343 20 tgl 15 1 empty empty on 0 -6 0 8 -258113 -1 -1 1 1;
 #X text 243 96 1;
 #X text 258 152 2;
-#X text 254 190 3;
-#X text 254 237 4;
+#X text 255 228 3;
+#X text 255 302 4;
 #X obj 258 95 Rotosampleur2/Rotosampleur \$0;
-#X obj 384 332 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 512 149 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 384 355 s \$0-myo-to-roto;
-#X obj 274 192 SyllaboCombat/Syllaboratoire \$0;
-#X obj 278 150 MyosotisBaroque/Myosotis \$0;
+#X obj 512 168 s \$0-myo-to-roto;
+#X obj 275 230 SyllaboCombat/Syllaboratoire \$0;
+#X obj 278 147 MyosotisBaroque/Myosotis \$0;
 #X obj 412 47 declare -path Fraise;
 #X obj 9 11 pied/pied 0 41424;
-#X obj 274 259 RepietiteurBar/Repietiteur \$0;
+#X obj 275 324 RepietiteurBar/Repietiteur \$0;
 #X obj 10 90 fruit/fruit 1 Roto 50 ClochePied26k22;
 #X obj 10 138 fruit/fruit 1 Myo 51 ClochePied26k22;
-#X obj 10 187 fruit/fruit 1 Sylla 52 ClochePied26k22;
-#X obj 11 236 fruit/fruit 1 Repie 53 ClochePied26k22;
-#X obj 46 397 s ClochesMode;
-#X obj 46 294 loadbang;
-#X obj 275 211 Syllabasse/0master \$0;
-#X msg 64 334 Syllabo Combat;
-#X msg 46 315 Syllabo Basse;
-#X obj 274 280 RepieDrum/0master \$0;
-#X msg 167 313 Repie Drum;
-#X msg 180 333 Repie Baroque;
-#X msg 189 359 Repie Classic;
-#X obj 274 238 Repietiteur/Repietiteur \$0;
-#X obj 10 443 1TELECO_OSC/TelecoMaster \$0;
+#X obj 11 225 fruit/fruit 1 Sylla 52 ClochePied26k22;
+#X obj 12 274 fruit/fruit 1 Repie 53 ClochePied26k22;
+#X obj 47 435 s ClochesMode;
+#X obj 47 332 loadbang;
+#X obj 276 251 Syllabasse/0master \$0;
+#X msg 65 372 Syllabo Combat;
+#X msg 47 353 Syllabo Basse;
+#X obj 275 345 RepieDrum/0master \$0;
+#X msg 168 351 Repie Drum;
+#X msg 181 371 Repie Baroque;
+#X msg 190 397 Repie Classic;
+#X obj 275 303 Repietiteur/Repietiteur \$0;
+#X obj 11 481 1TELECO_OSC/TelecoMaster \$0;
+#X obj 310 168 r Myososampleur/Myososampleur \$0;
+#X obj 275 271 SyllaOrgue/0master \$0;
+#X obj 275 365 RepieOrgue/0master \$0;
+#X obj 278 192 MyosotisNappe/0master \$0;
 #X connect 3 0 2 0;
 #X connect 9 0 10 0;
 #X connect 21 0 24 0;
