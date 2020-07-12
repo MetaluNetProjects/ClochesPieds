@@ -1,0 +1,3 @@
+[submodule "domoTools"]
+	path = domoTools
+	url = http://github.com/MetaluNetProjects/domoTools.git
