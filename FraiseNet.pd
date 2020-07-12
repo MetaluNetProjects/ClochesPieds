@@ -1,0 +1,12 @@
+#N canvas 332 137 208 214 10;
+#X obj 11 40 route Fr2;
+#X obj 11 61 s Fr2;
+#X obj 13 91 r 2Fr2;
+#X obj 13 113 list prepend 2Fr2;
+#X obj 9 20 r \$1-fromserver;
+#X obj 12 136 s \$1-toserver;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X coords 0 0 1 1 50 50 0;

@@ -1,0 +1,19 @@
+#		Config des paroles du Syllaboratoire
+
+
+lang fr ~
+lang en #
+
+parole m1	a	hi	ppo 	po	tame
+parole m2	z	o	bli	ga	tion
+parole m3	e	la	bo	ra	toire
+parole m4	r	a	ccor	dé	on
+parole m5	t	cal	cu 	la	trice
+parole m6	y	qua	tre	cents	clous
+parole m7	u	bal	bu	ti(ssi)	ment
+parole m8	i	rhi	no	cé	ros
+parole m9	o	lo	co	mo	tive
+parole m10	p	or	di	na	teur
+parole m11	q	
+parole m12	s	
+

@@ -1,0 +1,45 @@
+-nrt
+-noaudio
+#-jack
+#-outchannels 4
+#-inchannels 1
+
+-path moonlibs-0.2/externs0.37
+-helppath moonlibs-0.2/docs
+
+-path build/xeq-modif
+-path build/linux
+-path build/miXed
+-helppath build/doc
+-path PdPatchs
+-path PdPatchs/Presets
+-path PdPatchs/AutoPreset
+-path PdPatchs/Console
+-path PdPatchs/Effets
+-path PdPatchs/Images
+-path moon_utils/HurFace
+#-path moon_utils/HurFaceDMX
+-path moon_utils/Fraise/v0.1/FraiseDrv
+-path PdPatchs/abs
+-path abs/iemabs
+-path abs/crebabs
+
+#-path pure-data/Gem
+
+-path pure-data/externals/grill/pd-linux
+-helppath pure-data/externals/grill/doc
+
+-lib nilib
+-lib sub
+-lib maxlib
+-lib openpatch
+-lib xeq
+-lib mknob
+-lib creb
+-lib iemlib1
+-lib iemlib2
+-lib iem_t3_lib
+-lib zexy
+#-lib Gem
+#-noloadbang
+#-open PdPatchs/receiver2.pd

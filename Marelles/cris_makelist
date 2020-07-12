@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for x in {court,long}{0,1,2,3,4,5,6,7,8,9}{1,2,3,4,5,6,7,8,9}  nom cri message; do 
+	y="$1/$x.wav"
+	dy=`dirname $y`
+	by=`basename $y`
+	tablo=[] 
+	tablo=`find $dy/  -name '?????_'$by \
+		-printf "num %8s %f\n" | cut -c -18 `
+	if  [[ ${#tablo[0]} != 0 ]] ; then
+		echo phrase $x
+		echo "$tablo" 
+	fi
+done

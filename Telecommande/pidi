@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#REL_PDPATH="../../../"
+
+Local_t=`pwd`/$0
+PDDIR=`dirname $Local_t`
+if [ ${0:0:1} == / ]
+	then PDDIR=`dirname $0`
+fi
+
+#cd $PDDIR/$REL_PDPATH
+#gmessage PDDIR=$PDDIR `ls`
+
+#rxvt -iconic -geometry 40x10 -title PureData -sl 2000 \
+#-e pd-0.38-2/bin/pd `cat $PDDIR/pdrc | grep -v ^\#` $PDDIR/Master.pd
+
+rxvt -iconic -geometry 40x10 -title PureData -sl 2000 \
+-e pdextended -nrt -noaudio -open $PDDIR/Master.pd

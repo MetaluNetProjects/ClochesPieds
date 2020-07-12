@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# $1=paroles_dir  $2=kbconfig_file  $3=output  $4=pdsend_chan  $5=pdsend_prefix
+echo "$5 begin;"
+
+if test $1 -nt $3 ; then
+
+	n=0
+	rm -f $3
+
+	for x in `cat $2 | grep "^parole" | cut -d " " -f 2 | cut -f 1`;	do
+		let n=$n+1
+		y=$1/$x
+		pararray=`ls $y??.wav | cut -b $((${#y}+1))-$((${#y}+2))`
+		parmodes=`echo "$pararray" |  cut -b 1 | sort | uniq`
+		for m in $parmodes; do
+			parmodeindexes="`echo "$pararray" | grep "\<$m" | cut -b 2`"
+			#echo $x $n $m ${#parmodeindexes[@]} $parmodeindexes
+			#echo $x $n $m `echo "${parmodeindexes}"| wc -l` $parmodeindexes
+			echo $x $n $m `echo "${parmodeindexes}"| wc -l` $parmodeindexes >> $3
+		done
+	done
+
+fi
+
+echo "$5 done;"
+
+#echo "$5 done;" | pdsend $4

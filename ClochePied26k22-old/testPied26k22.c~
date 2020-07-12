@@ -1,0 +1,179 @@
+/*********************************************************************
+ *
+ *                KE01 for FraiseStep
+ *
+ *********************************************************************
+ * Author               Date        Comment
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Antoine Rousseau  march 2012     Original.
+ ********************************************************************/
+
+/*
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+# MA  02110-1301, USA.
+*/
+
+/* 5 analog :
+	K4 (13)
+	K5 (11)
+	K6 (12)
+	K7 (16)
+	milieu de ICSP (9)
+	
+	K1 : bouton shift 
+	K2 : led beat
+	K3 : led play
+	K8 (bout de ICSP) : bouton rec
+	K9 (entre K8 et analog_9) : led rec
+*/
+#define BOARD Pied26k22
+
+#define Led1 K9
+#define Led2 K3
+#define Led3 K2
+
+#include <fraise.h>
+#include <analog.h>
+#include <switch.h>
+
+unsigned char PERIOD=255;
+unsigned char t,t2=0;	
+
+void LowInterrupts() {}
+void HighInterrupts() {}
+
+void main(void)
+{
+	unsigned long t3;
+	
+	FraiseInit();
+		
+	Analog_Init();
+	
+	/*Analog_Select(13,4);
+	Analog_Select(11,3);
+	Analog_Select(12,2);
+	Analog_Select(16,1);
+	Analog_Select(9,0);*/
+
+	/*ANALOG_SELECT(0,K4);
+	ANALOG_SELECT(1,K5);
+	ANALOG_SELECT(2,K6);
+	ANALOG_SELECT(3,K7);
+	ANALOG_SELECT(4,K10);*/
+	
+	Switch_Init();
+	SWITCH_SELECT(0,K1); 
+	SWITCH_SELECT(1,K8);
+
+	/*SWITCH_SELECT(3,MA1);
+	SWITCH_SELECT(4,MA2);
+	SWITCH_SELECT(5,MB1);
+	SWITCH_SELECT(6,MB2);
+
+	SetPinDigiOut(Led1); DigitalWrite(Led1,1);
+	SetPinDigiOut(Led2); DigitalWrite(Led2,1);
+	SetPinDigiOut(Led3); DigitalWrite(Led3,1);*/
+	
+	t=PERIOD;
+	t3=GetTime();
+	EEreadMain();
+	
+	while(1){
+		FraiseService();
+		Analog_Service();
+		Switch_Service();
+		if(Elapsed(t3)>Micros(5000UL)) {
+			t3=GetTime();
+			if(Switch_Send()==0) 
+				Analog_Send(1);
+			if(!t--){
+				t=PERIOD;
+				t2++;
+				//if(t2==0) Analog_printmin();
+				//else if(t2==1) Analog_printmax();
+				//else 
+				printf("C t2 %d \n", t2);//%d %d\n",t2,PORTB,PORTE);
+			}
+		}
+	}
+
+}
+
+void CharBroadcast()
+{
+	/*unsigned char c;
+	
+	printf("Brdcst: ");
+	for(c=0;c<FrRXout_len;c++) printf("%c",FrRXgetchar());
+	putchar('\n');*/
+}
+
+void Broadcast()
+{
+	/*unsigned char c;
+	
+	printf("brdcst: ");
+	for(c=0;c<FrRXout_len;c++) printf("%d ",FrRXgetchar());
+	putchar('\n');*/
+}
+
+void CharInput()
+{
+	unsigned char c;
+	
+	c=FrRXgetchar();
+	//printf("Cchar in:%c %c\n",c,c2);
+	/*if(c=='L'){	
+		c=FrRXgetchar()-'0';
+		DigitalWrite(Led1,(c&1)==0); 
+		DigitalWrite(Led2,(c&2)==0); 
+		DigitalWrite(Led3,(c&4)==0); 
+	}
+	else*/ if(c=='E') {
+		printf("C");
+		for(c=1;c<FrRXout_len;c++) printf("%c",FrRXgetchar());
+		putchar('\n');
+	}
+		else if(c=='S') { //analog scaling
+		c=FrRXgetchar()-'0';
+		Analog_Scaling(c!=0);
+		if(c==0) EEwriteMain();
+	}	
+}
+
+void Input()
+{
+	unsigned char c;//,c2;
+	//unsigned int i;
+
+	c=FrRXgetchar();
+
+	switch(c) {
+		PARAM_CHAR(1,t2); break;
+		PARAM_CHAR(2,PERIOD); break;
+		case 3:
+			//MOTB_EN=0;
+			//MOTB_EN=1;
+			break;
+	}
+}
+
+void EEdeclareMain()
+{
+	EEsetaddress(EEUSER);
+	
+	Analog_declareEE();
+}
