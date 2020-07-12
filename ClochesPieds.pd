@@ -70,7 +70,7 @@
 #X obj 357 169 tgl 30 0 \$0-telludiing-snd \$0-telludiing-rcv diing
 2 15 1 10 -262144 -1 -1 0 1;
 #X restore 412 9 pd Interface;
-#N canvas 13 133 245 292 interfguts 1;
+#N canvas 13 133 245 292 interfguts 0;
 #X obj 47 13 dispatch \$0-s 1 4;
 #X obj 47 32 dispatch \$0-rep 1 4;
 #N canvas 197 0 450 258 8bits 0;
@@ -383,7 +383,7 @@
 #X connect 31 0 28 0;
 #X connect 32 0 2 0;
 #X restore 49 166 pd Sylla;
-#N canvas 23 328 651 415 Repie 1;
+#N canvas 23 328 651 415 Repie 0;
 #X msg 248 142 5 \$1;
 #X obj 101 46 route s a;
 #X obj 149 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0

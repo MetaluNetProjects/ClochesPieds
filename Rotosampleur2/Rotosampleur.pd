@@ -1,9 +1,9 @@
-#N canvas 723 234 377 534 10;
+#N canvas 723 209 377 534 10;
 #X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
 -1 -1 1 1;
 #X obj 11 185 r \$0-onoff;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 2839 1;
+1 10 -258699 -1 -1 6739 1;
 #X obj 12 231 switch~;
 #N canvas 866 106 298 213 master 0;
 #X obj 182 34 catch~ \$0-out;
