@@ -70,7 +70,7 @@
 #X obj 357 169 tgl 30 0 \$0-telludiing-snd \$0-telludiing-rcv diing
 2 15 1 10 -262144 -1 -1 0 1;
 #X restore 412 9 pd Interface;
-#N canvas 13 106 245 292 interfguts 0;
+#N canvas 13 133 245 292 interfguts 1;
 #X obj 47 13 dispatch \$0-s 1 4;
 #X obj 47 32 dispatch \$0-rep 1 4;
 #N canvas 197 0 450 258 8bits 0;
@@ -383,7 +383,7 @@
 #X connect 31 0 28 0;
 #X connect 32 0 2 0;
 #X restore 49 166 pd Sylla;
-#N canvas 23 353 651 415 Repie 0;
+#N canvas 23 328 651 415 Repie 1;
 #X msg 248 142 5 \$1;
 #X obj 101 46 route s a;
 #X obj 149 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -458,7 +458,7 @@
 #X connect 6 0 7 0;
 #X connect 8 0 2 1;
 #X restore 66 167 pd debounce;
-#N canvas 0 0 450 300 debounce 0;
+#N canvas 1 81 450 300 debounce 0;
 #X obj 168 49 inlet;
 #X obj 171 82 sel 1 0;
 #X obj 202 137 del 50;
@@ -500,9 +500,9 @@
 #X connect 6 0 7 0;
 #X connect 8 0 2 1;
 #X restore 103 138 pd debounce;
-#X msg 428 53 50;
 #X obj 102 21 fruit/receive Repie;
 #X obj 378 249 fruit/send Repie;
+#X msg 428 53 5;
 #X connect 0 0 14 0;
 #X connect 1 0 6 0;
 #X connect 2 0 25 0;
@@ -517,20 +517,20 @@
 #X connect 6 6 9 0;
 #X connect 6 7 10 0;
 #X connect 6 8 7 0;
-#X connect 12 0 29 0;
-#X connect 13 0 29 1;
-#X connect 16 0 29 0;
+#X connect 12 0 28 0;
+#X connect 13 0 28 1;
+#X connect 16 0 28 0;
 #X connect 17 0 14 0;
 #X connect 18 0 14 0;
 #X connect 19 0 14 0;
 #X connect 20 0 14 0;
 #X connect 21 0 18 0;
-#X connect 22 0 27 0;
+#X connect 22 0 29 0;
 #X connect 24 0 17 0;
 #X connect 25 0 19 0;
 #X connect 26 0 20 0;
-#X connect 27 0 23 0;
-#X connect 28 0 1 0;
+#X connect 27 0 1 0;
+#X connect 29 0 23 0;
 #X restore 49 188 pd Repie;
 #N canvas 774 406 450 300 Roto 0;
 #X msg 107 160 1 \$1;
@@ -730,11 +730,14 @@
 #X obj 10 138 fruit/fruit 1 Myo 51 ClochePied26k22;
 #X obj 10 187 fruit/fruit 1 Sylla 52 ClochePied26k22;
 #X obj 11 236 fruit/fruit 1 Repie 53 ClochePied26k22;
-#X obj 46 336 s ClochesMode;
+#X obj 46 366 s ClochesMode;
 #X obj 46 294 loadbang;
 #X obj 275 211 Syllabasse/0master \$0;
-#X msg 142 315 Syllabo Combat;
+#X msg 64 334 Syllabo Combat;
 #X msg 46 315 Syllabo Basse;
+#X obj 272 260 RepieDrum/0master \$0;
+#X msg 167 313 Repie Drum;
+#X msg 180 333 Repie Baroque;
 #X connect 3 0 2 0;
 #X connect 8 0 14 0;
 #X connect 9 0 12 0;
@@ -745,6 +748,9 @@
 #X connect 20 0 21 0;
 #X connect 24 0 8 0;
 #X connect 33 0 36 0;
+#X connect 33 0 38 0;
 #X connect 35 0 32 0;
 #X connect 36 0 32 0;
+#X connect 38 0 32 0;
+#X connect 39 0 32 0;
 #X coords 0 0 1 1 150 240 0;

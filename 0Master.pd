@@ -3,7 +3,7 @@
 #X declare -path iemlib -lib iemlib -lib iemlib1;
 #X declare -path abs;
 #X declare -path moonlib -path ggee -path motex -path hcs;
-#X declare -path ../domoVian2018/domoTools;
+#X declare -path domoTools;
 #X obj 8 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
 #X obj 23 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
 #X obj 38 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
@@ -14,7 +14,7 @@
 #X obj 238 33 loadbang;
 #X obj 238 52 del 2000;
 #X msg 238 72 1;
-#N canvas 709 218 398 318 in 1;
+#N canvas 709 218 398 318 in 0;
 #X obj 51 215 unpack 0 0 0;
 #X obj 90 236 + 11;
 #X obj 90 256 change;
@@ -410,13 +410,13 @@ master 0 -9 0 10 -258113 -1 -1 6583 1;
 #X msg 152 32 1;
 #X obj 8 229 route clock Gammes standby;
 #X obj 159 251 == 0;
-#N canvas 79 345 450 300 declares 0;
+#N canvas 79 345 450 300 declares 1;
 #X obj 33 17 declare -lib zexy;
 #X obj 33 38 declare -path iemlib -lib iemlib -lib iemlib1;
 #X obj 34 79 declare -path abs;
 #X obj 34 59 declare -path moonlib -path ggee -path motex -path hcs
 ;
-#X obj 34 98 declare -path ../domoVian2018/domoTools;
+#X obj 34 98 declare -path domoTools;
 #X restore 270 207 pd declares;
 #X obj 10 149 l PdClient \$0 ClochesPieds;
 #X obj 111 186 l FraiseNet \$0;

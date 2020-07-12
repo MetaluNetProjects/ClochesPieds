@@ -4,7 +4,7 @@
 -1 -1 1 1;
 #X obj 11 185 r \$0-onoff;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 2890 1;
+1 10 -258699 -1 -1 2490 1;
 #X obj 12 231 switch~;
 #N canvas 77 256 298 213 master 0;
 #X obj 175 7 catch~ \$0-out;
@@ -33,7 +33,7 @@
 #X obj 2 2 tgl 30 0 \$0-s1-snd \$0-s1-rcv I 13 15 1 10 -262144 -1 -1
 0 1;
 #X obj 34 2 tgl 30 0 \$0-s2-snd \$0-s2-rcv PO 7 15 1 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 66 2 tgl 30 0 \$0-s3-snd \$0-s3-rcv PO 7 15 1 10 -262144 -1
 -1 0 1;
 #X obj 98 2 tgl 30 0 \$0-s4-snd \$0-s4-rcv TAM 2 15 1 10 -262144 -1
@@ -169,7 +169,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 202 52 r \$0-onoff;
 #X obj 316 73 route Basse;
 #X obj 141 133 r \$0-keys;
-#N canvas 607 166 609 438 mono 0;
+#N canvas 91 183 609 438 mono 0;
 #X obj 37 37 inlet;
 #X msg 37 58 \$2 \$1;
 #X obj 245 154 r \$0-monolist;
@@ -190,7 +190,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 37 217 s \$0-monolist;
 #X obj 40 312 r \$0-monolist;
 #X obj 40 335 list split 1;
-#X msg 109 354 -1;
+#X msg 137 367 -1;
 #X obj 40 398 outlet;
 #X obj 444 138 loadbang;
 #X msg 444 158 list;
@@ -211,6 +211,8 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 315 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 319 37 5 \$1;
+#X obj 40 366 change;
+#X msg 88 364 set -1;
 #X connect 0 0 1 0;
 #X connect 1 0 16 0;
 #X connect 2 0 3 1;
@@ -235,8 +237,9 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 16 0 15 0;
 #X connect 16 1 6 0;
 #X connect 18 0 19 0;
-#X connect 19 0 21 0;
+#X connect 19 0 36 0;
 #X connect 19 2 20 0;
+#X connect 19 2 37 0;
 #X connect 20 0 21 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
@@ -251,9 +254,11 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 33 0 1 0;
 #X connect 34 0 35 0;
 #X connect 35 0 33 0;
+#X connect 36 0 21 0;
+#X connect 37 0 36 0;
 #X restore 141 154 pd mono;
 #X floatatom 111 185 5 0 0 0 - - -;
-#N canvas 201 286 796 569 synth 1;
+#N canvas 201 286 796 569 synth 0;
 #X obj 37 37 inlet;
 #X obj 70 98 * 2;
 #X obj 70 120 gammabs/gammeRound /GAMME 20;
@@ -375,6 +380,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 58 0 53 0;
 #X connect 59 0 17 0;
 #X restore 141 175 pd synth;
+#X obj 141 208 lop~ 5000;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 9 1 15 0;
@@ -393,4 +399,5 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 25 0 27 0;
-#X connect 27 0 10 0;
+#X connect 27 0 28 0;
+#X connect 28 0 10 0;
