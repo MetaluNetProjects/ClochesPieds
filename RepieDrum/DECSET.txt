@@ -16,7 +16,7 @@ SEQ fd1 tone 1.41414 16 1.41414 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 SEQ fragseq1-vol 0.457627 16 0.457627 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
 SEQ fragseq1-palinmesure 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-SEQ fragseq1-constance 9 16 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-constance 2 16 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 SEQ fragseq1-pitch 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 SEQ fragseq1-fragdenum 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 SEQ fragseq1-timemode 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
