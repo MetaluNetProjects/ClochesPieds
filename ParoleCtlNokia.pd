@@ -1,0 +1,177 @@
+#N canvas 54 30 651 353 10;
+#N canvas 163 46 697 437 interfgut 0;
+#X obj 34 45 r \$0-paroledown-snd;
+#X obj 172 45 r \$0-paroleup-snd;
+#X msg 34 67 paroledown;
+#X msg 172 68 paroleup;
+#X obj 286 111 s \$0-interface-snd;
+#X obj 124 144 r \$0-interface-rcv;
+#X obj 28 196 s \$0-parolenamecnv;
+#X obj 164 255 s \$0-mode-rcv;
+#X obj 296 45 r \$0-mode-snd;
+#X msg 296 67 mode \$1 \$2;
+#X obj 23 9 dispatch \$0-mode 0 9;
+#X obj 172 9 dispatch \$0-play 1 9;
+#X obj 321 9 dispatch \$0-rec 1 9;
+#X obj 397 44 r \$0-play-snd;
+#X obj 496 44 r \$0-rec-snd;
+#X msg 496 66 rec \$1 \$2;
+#X msg 397 66 play \$1 \$2;
+#X obj 281 237 s \$0-play-rcv;
+#X obj 390 241 s \$0-rec-rcv;
+#X obj 397 218 s \$0-recording-rcv;
+#X msg 397 198 set \$1;
+#X obj 58 303 r \$0-interface-snd;
+#X obj 58 367 glue;
+#X obj 58 325 t b a;
+#X obj 93 346 a2l;
+#X obj 199 347 s \$0-interface-rcv;
+#X obj 448 266 s \$1-vol-rcv;
+#X obj 589 43 r \$1-vol-snd;
+#X msg 589 65 vol \$1;
+#X obj 58 389 route list;
+#X msg 391 261 set \$1;
+#X obj 164 211 nroute color 2;
+#X obj 190 231 nroute set 2;
+#X obj 58 412 s \$1-interfaces-snd;
+#X obj 58 346 l \$2;
+#X obj 199 325 route \$2;
+#X obj 199 304 r \$1-interfaces-rcv;
+#X obj 282 217 nroute color 2;
+#N canvas 279 91 450 300 size&pos 0;
+#X obj 102 114 t f f;
+#X msg 99 202 \$1 size 60 \, \$1 pos \$2;
+#X obj 132 135 * 60;
+#X obj 100 173 pack f f;
+#X obj 203 42 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 227 124 \$1 label_pos 20 30;
+#X msg 229 155 \$1 label_font 1 30;
+#X obj 193 72 for++ 1 9;
+#X obj 104 240 s \$0-rec-rcv;
+#X connect 0 0 3 0;
+#X connect 0 1 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 7 0 6 0;
+#X connect 7 0 0 0;
+#X restore 399 361 pd size&pos;
+#X obj 124 166 route parolenamecnv mode play rec recording vol titlecnv
+;
+#X obj 495 194 s \$0-titlecnv;
+#X obj 594 92 r \$0-choix-snd;
+#X msg 594 112 choix \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 39 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 16 0 4 0;
+#X connect 20 0 19 0;
+#X connect 21 0 23 0;
+#X connect 22 0 29 0;
+#X connect 23 0 34 0;
+#X connect 23 1 24 0;
+#X connect 24 0 22 1;
+#X connect 27 0 28 0;
+#X connect 28 0 4 0;
+#X connect 29 0 33 0;
+#X connect 31 0 7 0;
+#X connect 31 1 32 0;
+#X connect 32 0 7 0;
+#X connect 34 0 22 0;
+#X connect 35 0 25 0;
+#X connect 36 0 35 0;
+#X connect 37 0 17 0;
+#X connect 39 0 6 0;
+#X connect 39 1 31 0;
+#X connect 39 2 37 0;
+#X connect 39 4 20 0;
+#X connect 39 6 40 0;
+#X connect 41 0 42 0;
+#X connect 42 0 4 0;
+#X restore 572 7 pd interfgut;
+#X obj 0 0 cnv 15 650 380 empty \$0-titlecnv rotobservatoire 300 15
+1 30 -355 -262144 0;
+#X obj 74 29 cnv 15 500 60 empty \$0-parolenamecnv point2 10 30 0 60
+-1 -241291 0;
+#X obj 13 29 bng 60 250 50 0 \$0-paroledown-snd \$0-paroledown-rcv
+< 20 30 1 30 -225271 -1 -1;
+#X obj 574 29 bng 60 250 50 0 \$0-paroleup-snd \$0-paroleup-rcv > 20
+30 1 30 -225271 -1 -1;
+#X obj 13 90 cnv 15 620 100 empty empty Mode 10 10 1 20 -228992 -66577
+0;
+#X obj 79 109 tgl 60 0 \$0-mode1-snd \$0-mode1-rcv 1 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 19 109 tgl 60 0 \$0-mode0-snd \$0-mode0-rcv 0 20 30 1 30 -24198
+-1 -1 0 1;
+#X obj 139 109 tgl 60 0 \$0-mode2-snd \$0-mode2-rcv 2 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 199 109 tgl 60 0 \$0-mode3-snd \$0-mode3-rcv 3 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 319 109 tgl 60 0 \$0-mode5-snd \$0-mode5-rcv 5 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 259 109 tgl 60 0 \$0-mode4-snd \$0-mode4-rcv 4 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 379 109 tgl 60 0 \$0-mode6-snd \$0-mode6-rcv 6 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 439 109 tgl 60 0 \$0-mode7-snd \$0-mode7-rcv 7 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 499 109 tgl 60 0 \$0-mode8-snd \$0-mode8-rcv 8 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 559 109 tgl 60 0 \$0-mode9-snd \$0-mode9-rcv 9 20 30 1 30 -262144
+-1 -1 0 1;
+#X obj 13 176 cnv 15 620 100 empty empty Listen 10 10 1 20 -225271
+-66577 0;
+#X obj 23 196 bng 60 250 50 0 \$0-play1-snd \$0-play1-rcv 1 20 30 1
+30 -24198 -1 -1;
+#X obj 83 196 bng 60 250 50 0 \$0-play2-snd \$0-play2-rcv 2 20 30 1
+30 -262144 -1 -1;
+#X obj 143 196 bng 60 250 50 0 \$0-play3-snd \$0-play3-rcv 3 20 30
+1 30 -262144 -1 -1;
+#X obj 203 196 bng 60 250 50 0 \$0-play4-snd \$0-play4-rcv 4 20 30
+1 30 -262144 -1 -1;
+#X obj 263 196 bng 60 250 50 0 \$0-play5-snd \$0-play5-rcv 5 20 30
+1 30 -262144 -1 -1;
+#X obj 323 196 bng 60 250 50 0 \$0-play6-snd \$0-play6-rcv 6 20 30
+1 30 -262144 -1 -1;
+#X obj 383 196 bng 60 250 50 0 \$0-play7-snd \$0-play7-rcv 7 20 30
+1 30 -262144 -1 -1;
+#X obj 443 196 bng 60 250 50 0 \$0-play8-snd \$0-play8-rcv 8 20 30
+1 30 -262144 -1 -1;
+#X obj 503 196 bng 60 250 50 0 \$0-play9-snd \$0-play9-rcv 9 20 30
+1 30 -262144 -1 -1;
+#X obj 13 263 cnv 15 620 100 empty empty Rec 10 10 1 20 -261681 -66577
+0;
+#X obj 23 282 bng 60 250 50 0 \$0-rec1-snd \$0-rec1-rcv 1 20 30 1 30
+-258699 -1 -1;
+#X obj 83 282 bng 60 250 50 0 \$0-rec2-snd \$0-rec2-rcv 2 20 30 1 30
+-258699 -1 -1;
+#X obj 143 282 bng 60 250 50 0 \$0-rec3-snd \$0-rec3-rcv 3 20 30 1
+30 -258699 -1 -1;
+#X obj 203 282 bng 60 250 50 0 \$0-rec4-snd \$0-rec4-rcv 4 20 30 1
+30 -258699 -1 -1;
+#X obj 263 282 bng 60 250 50 0 \$0-rec5-snd \$0-rec5-rcv 5 20 30 1
+30 -258699 -1 -1;
+#X obj 323 282 bng 60 250 50 0 \$0-rec6-snd \$0-rec6-rcv 6 20 30 1
+30 -258699 -1 -1;
+#X obj 383 282 bng 60 250 50 0 \$0-rec7-snd \$0-rec7-rcv 7 20 30 1
+30 -258699 -1 -1;
+#X obj 443 282 bng 60 250 50 0 \$0-rec8-snd \$0-rec8-rcv 8 20 30 1
+30 -258699 -1 -1;
+#X obj 503 282 bng 60 250 50 0 \$0-rec9-snd \$0-rec9-rcv 9 20 30 1
+30 -258699 -1 -1;
+#X obj 568 282 tgl 60 0 \$0-recording-snd \$0-recording-rcv empty 0
+-6 0 8 -260818 -1 -1 0 1;
+#X obj 16 1 hradio 25 1 0 8 \$0-choix-snd \$0-choix-rcv empty 0 -6
+0 8 -262144 -1 -1 2;

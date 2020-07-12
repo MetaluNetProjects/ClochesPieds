@@ -1,0 +1,200 @@
+#N canvas 272 134 440 542 10;
+#X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
+-1 -1 1 1;
+#X obj 11 185 r \$0-onoff;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
+1 10 -258699 -1 -1 2577 1;
+#X obj 12 231 switch~;
+#N canvas 58 168 308 291 master 0;
+#X obj 209 36 catch~ \$0-out;
+#X obj 172 115 *~;
+#X obj 14 22 catch~ \$0-parole_out;
+#X obj 14 66 hip~ 800;
+#X obj 24 43 catch~ \$0-parole_out2;
+#X obj 202 93 pow 2;
+#X obj 202 114 * 4;
+#X obj 202 71 r \$0-vol-snd;
+#X obj 149 72 hip~ 150;
+#X obj 43 131 subrev;
+#X obj 18 96 lop~ 2000;
+#X msg 234 136 3;
+#X floatatom 250 234 5 0 0 0 - - -;
+#X obj 172 158 busrme 4;
+#X connect 0 0 8 0;
+#X connect 1 0 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 1;
+#X connect 7 0 5 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 1;
+#X connect 12 0 13 1;
+#X restore 11 50 pd master;
+#N canvas 604 526 148 84 Interface 0;
+#X obj 10 8 tgl 30 0 \$0-rep1-snd \$0-rep1-rcv 1 13 15 1 10 -262144
+-1 -1 0 1;
+#X obj 42 8 tgl 30 0 \$0-rep2-snd \$0-rep2-rcv 2 13 15 1 10 -262144
+-1 -1 0 1;
+#X obj 10 40 tgl 30 0 \$0-rep3-snd \$0-rep3-rcv 3 13 15 1 10 -262144
+-1 -1 0 1;
+#X obj 42 40 tgl 30 0 \$0-rep4-snd \$0-rep4-rcv 4 13 15 1 10 -262144
+-1 -1 0 1;
+#X text 4 67 keys w x c v;
+#X obj 76 188 bng 30 250 50 0 \$0-b1-snd \$0-b1-rcv 1 13 15 1 8 -262144
+-1 -1;
+#X obj 77 154 bng 30 250 50 0 \$0-b2-snd \$0-b2-rcv 2 13 15 1 8 -262144
+-1 -1;
+#X obj 111 154 bng 30 250 50 0 \$0-b3-snd \$0-b3-rcv 3 13 15 1 8 -262144
+-1 -1;
+#X obj 111 187 bng 30 250 50 0 \$0-b4-snd \$0-b4-rcv 4 13 15 1 8 -262144
+-1 -1;
+#X restore 11 12 pd Interface;
+#N canvas 401 185 322 414 interfguts 0;
+#X obj 14 31 keyname;
+#X obj 14 56 pack f s;
+#X obj 14 77 spigot;
+#X obj 64 81 tgl 15 0 empty empty keyboard 0 -6 1 8 -241291 -1 -1 0
+1;
+#X obj 89 83 r \$0-getkeyb;
+#X obj 14 136 route w x c v;
+#X obj 148 299 s \$0-antirebond;
+#X obj 107 328 s \$0-deb1time;
+#X msg 70 275 40;
+#X obj 85 361 s \$0-deb0time;
+#X obj 72 255 loadbang;
+#X msg 110 306 10;
+#X msg 14 168 1 \$1;
+#X msg 64 168 2 \$1;
+#X msg 113 168 3 \$1;
+#X msg 163 168 4 \$1;
+#X msg 13 99 \$2 \$1;
+#X obj 64 198 s \$0-rep-rcv;
+#X obj 12 11 dispatch \$0-rep 1 4;
+#X obj 180 50 r \$1-rep-snd;
+#X obj 187 77 s \$0-rep-rcv;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 16 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 12 0;
+#X connect 5 1 13 0;
+#X connect 5 2 14 0;
+#X connect 5 3 15 0;
+#X connect 8 0 6 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 17 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 5 0;
+#X connect 19 0 20 0;
+#X restore 11 31 pd interfguts;
+#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
+-241291 -1 -1 0 1;
+#X obj 51 115 mknob 25 100 0 1 0 1 \$0-melovol-snd \$0-melovol-rcv
+melovol -2 -6 1 10 -250685 -1 -1 3400 1;
+#N canvas 0 0 283 124 unused 0;
+#X obj 11 33 apmaster \$0;
+#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
+;
+#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
+-1;
+#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
+10.11.12.13.14.15.16 122 -6 1 6 -258699 -1 -262144;
+#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
+_1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
+0;
+#N canvas 628 101 443 334 file_patt_but 0;
+#X msg 27 31 \$1;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 203 67 sel 0 1;
+#X msg 203 88 color 0 22 22;
+#X msg 226 112 color 13 22 22;
+#X obj 71 88 demux;
+#X obj 101 112 t f f b;
+#X msg 145 134 0;
+#X obj 99 212 s \$0-pattern-snd;
+#X obj 27 11 r \$0-file_patt_but-snd;
+#X obj 203 10 r \$0-save_file_patt-snd;
+#X msg 20 165 _apfile_ load \$1;
+#X msg 148 165 _apfile_ store \$1;
+#X obj 203 138 s \$0-file_patt_but-rcv;
+#X symbolatom 237 306 0 0 0 0 - - -;
+#X obj 249 286 s \$0-apmaster-rcv;
+#X msg 249 266 loadin;
+#X obj 237 202 r \$0-_apfile_-snd;
+#X obj 249 245 del 50;
+#X obj 249 226 b;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 1;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 13 0;
+#X connect 4 0 13 0;
+#X connect 5 0 11 0;
+#X connect 5 1 6 0;
+#X connect 6 1 12 0;
+#X connect 6 2 7 0;
+#X connect 7 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 1 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 0;
+#X connect 17 0 19 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X restore 10 77 pd file_patt_but;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X restore 13 254 pd unused;
+#X obj 51 152 mknob 25 100 0 1 0 1 \$0-buzzvol-snd \$0-buzzvol-rcv
+buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
+#X obj 81 157 bng 15 250 50 0 \$0-buzz empty empty 0 -6 0 8 -241291
+-1 -1;
+#X obj 168 63 route 0;
+#X obj 257 94 s \$0-keys;
+#X obj 133 442 throw~ \$0-out;
+#X obj 276 28 r \$0-st-snd;
+#X floatatom 131 75 5 0 0 0 - - -;
+#X msg 275 51 6 \$1;
+#X floatatom 189 93 5 0 0 0 - - -;
+#X obj 169 41 r \$0-rep-snd;
+#X obj 101 116 Voix \$0 GtDidier 8 1;
+#X obj 281 369 s \$0-Gammes;
+#X obj 281 296 r Gammes;
+#X obj 281 320 route 0 1;
+#X msg 281 345 1 \$1 \, 2 \$1 \, 3 \$1 \, 4 \$1;
+#X obj 128 142 Voix \$0 PianoDenis 8 2;
+#X obj 166 169 Voix \$0 GtElecClairSeb 8 3;
+#X obj 181 195 Voix \$0 ToyPiano 8 4;
+#X obj 355 315 r /GAMME;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 12 1 13 0;
+#X connect 12 1 18 0;
+#X connect 15 0 17 0;
+#X connect 17 0 13 0;
+#X connect 19 0 12 0;
+#X connect 19 0 16 0;
+#X connect 20 0 14 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 0;
+#X connect 25 0 14 0;
+#X connect 26 0 14 0;
+#X connect 27 0 14 0;
+#X connect 28 0 24 0;

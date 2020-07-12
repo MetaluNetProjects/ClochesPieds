@@ -1,0 +1,20 @@
+#		Config des paroles du Répiétiteur
+
+
+lang fr ~
+lang en #
+
+parole nouvelle	a	Nouvelle Partie; répète:
+parole suivant	z	Mainenant, répète:
+parole reussi	e	Bravo, tu as reussi.
+parole rate1	r	Dommage. Reessayons:
+parole rate2	t	Arghh. Encore rate. Ressaye:
+parole rate3	y	Encore une derniere chance.Réécoute:
+parole perdu	u	Tu as perdu la partie.
+parole niveau	i	Tu arrive au niveau...
+parole un	q	Un
+parole deux	s	Deux
+parole trois	d	Trois
+parole quatre	f	Quatre
+parole gagne	g	Tu as gagné la partie! Bravo!
+
