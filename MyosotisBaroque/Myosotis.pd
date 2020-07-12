@@ -3,7 +3,7 @@
 -1 -1 1 1;
 #X obj 51 102 r \$0-onoff;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 4131 1;
+1 10 -258699 -1 -1 5231 1;
 #X obj 52 148 switch~;
 #N canvas 11 160 298 213 master 0;
 #X obj 123 39 catch~ \$0-out;
@@ -208,13 +208,13 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 287 531 makesymbol %s/Cloches/wav/MyosotisBaroque/\$2/\$2%s.wav
 ;
 #X obj 145 360 *~ 2;
-#X obj 5 334 Voix \$0 Chant 16 0;
 #X obj 205 422 l Percu \$0 Percu 12 0;
 #X obj 246 454 Percu \$0 Percu 12 5;
 #X obj 0 428 l Voix \$0 Epinette 8 5;
 #X msg 465 391 4 \$1 \, 0 \$1;
 #X obj 470 324 r /GAMME;
 #X floatatom 495 355 5 0 0 0 - - -;
+#X obj -26 333 Voix \$0 GtElecClairSeb 8 0;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 9 0 10 0;
@@ -240,7 +240,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 34 0 36 0;
 #X connect 34 1 35 0;
 #X connect 34 1 37 0;
-#X connect 34 1 64 0;
+#X connect 34 1 63 0;
 #X connect 35 0 32 0;
 #X connect 36 0 32 0;
 #X connect 37 0 32 0;
@@ -267,12 +267,12 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 56 0 59 0;
 #X connect 57 0 26 0;
 #X connect 59 0 26 0;
-#X connect 60 0 26 0;
-#X connect 62 0 47 0;
-#X connect 63 0 26 0;
-#X connect 64 0 32 0;
-#X connect 65 0 37 0;
-#X connect 65 0 35 0;
-#X connect 65 0 36 0;
-#X connect 65 0 64 0;
-#X connect 65 0 66 0;
+#X connect 61 0 47 0;
+#X connect 62 0 26 0;
+#X connect 63 0 32 0;
+#X connect 64 0 37 0;
+#X connect 64 0 35 0;
+#X connect 64 0 36 0;
+#X connect 64 0 63 0;
+#X connect 64 0 65 0;
+#X connect 66 0 26 0;
