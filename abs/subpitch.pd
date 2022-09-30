@@ -1,0 +1,14 @@
+#N canvas 37 14 258 246 10;
+#X obj 23 111 shifter;
+#X obj 23 28 inlet~;
+#X obj 23 187 outlet~;
+#X obj 37 64 subdial yellow -24 24 1 -12.72;
+#X obj 23 161 mull~ 1 50;
+#X obj 55 136 subdial red 0 1 1 1;
+#X obj 52 86 init 50;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X connect 6 0 0 2;

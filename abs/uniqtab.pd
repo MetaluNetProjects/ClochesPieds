@@ -1,0 +1,10 @@
+#N canvas 383 147 450 300 10;
+#X obj 131 10 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
+-1;
+#X msg 139 110 \; \$1 vis 1;
+#X obj 139 64 symbol \$0-table;
+#X obj 139 87 makesymbol pd-%s;
+#X obj 28 110 table \$0-table;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
