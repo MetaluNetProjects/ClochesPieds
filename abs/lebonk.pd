@@ -1,0 +1,14 @@
+#N canvas 349 111 276 297 10;
+#X obj 74 61 switch~;
+#X obj 74 38 subtoggle red on 1 0;
+#X obj 15 2 in \$1;
+#X obj 67 262 s \$1-bonk;
+#X obj 37 181 bonk~;
+#X obj 75 12 r \$2-mulbonk;
+#X obj 56 98 r \$1-inbonk;
+#X obj 67 216 unpack f f;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 4 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;

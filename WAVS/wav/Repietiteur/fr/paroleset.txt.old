@@ -1,0 +1,26 @@
+nouvelle 1 0 5 1 2 3 4 5
+nouvelle 1 1 5 1 2 3 4 5
+suivant 2 0 4 1 2 3 4
+suivant 2 1 4 1 2 3 4
+reussi 3 0 4 1 2 3 4
+reussi 3 1 4 1 2 3 4
+rate1 4 0 3 1 2 3
+rate1 4 1 3 1 2 3
+rate2 5 0 3 1 2 3
+rate2 5 1 3 1 2 3
+rate3 6 0 4 1 2 3 4
+rate3 6 1 4 1 2 3 4
+perdu 7 0 4 1 2 3 4
+perdu 7 1 4 1 2 3 4
+niveau 8 0 5 1 2 3 4 5
+niveau 8 1 5 1 2 3 4 5
+niveau1 9 0 3 1 2 3
+niveau1 9 1 3 1 2 3
+niveau2 10 0 3 1 2 3
+niveau2 10 1 3 1 2 3
+niveau3 11 0 3 1 2 3
+niveau3 11 1 3 1 2 3
+niveau4 12 0 4 1 2 3 4
+niveau4 12 1 4 1 2 3 4
+gagne 13 0 4 1 2 3 4
+gagne 13 1 4 1 2 3 4

@@ -1,0 +1,13 @@
+#N canvas 0 317 329 199 10;
+#X obj 94 52 inlet;
+#X obj 151 52 inlet;
+#X obj 211 53 inlet;
+#X text 93 33 note;
+#X text 152 34 veloc;
+#X text 209 34 channel;
+#X obj 108 124 s my_noteout;
+#X obj 108 92 pack \$1 \$2 \$3;
+#X connect 0 0 7 0;
+#X connect 1 0 7 1;
+#X connect 2 0 7 2;
+#X connect 7 0 6 0;

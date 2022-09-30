@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # $1=paroles_dir  $2=kbconfig_file  $3=output  $4=pdsend_chan  $5=pdsend_prefix
 echo "$5 begin;"

@@ -1,0 +1,12 @@
+#N canvas 233 463 202 165 10;
+#X obj 10 7 r genmode;
+#X obj 58 76 gate;
+#X obj 88 40 sel 1;
+#X obj 19 39 == \$1;
+#X obj 88 8 keyon \$2;
+#X obj 58 99 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
