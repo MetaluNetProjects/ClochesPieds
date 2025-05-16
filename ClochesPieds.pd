@@ -1,6 +1,6 @@
-#N canvas 2088 562 644 519 10;
+#N canvas 696 129 644 519 10;
 #X declare -path Fraise;
-#N canvas 1992 888 402 323 Interface 1;
+#N canvas 1992 888 402 323 Interface 0;
 #X obj 0 1 cnv 15 400 320 empty empty empty 20 12 0 14 -90881 -66577
 0;
 #X obj 239 13 cnv 15 120 120 empty empty Myosotis 20 12 2 14 -225271
@@ -8,13 +8,13 @@
 #X obj 284 49 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 317 49 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 -262131
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 317 82 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 251 49 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 284 82 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 -228992
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 251 82 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 -262131
 -1 -1 0 1;
 #X obj 225 211 cnv 15 100 100 empty empty Répiétiteur 5 12 2 14 -225271
@@ -660,7 +660,7 @@
 #X obj 47 435 s ClochesMode;
 #X obj 47 332 loadbang;
 #X obj 276 251 Syllabasse/0master \$0;
-#X msg 65 372 Syllabo Combat;
+#X msg 65 381 Syllabo Combat;
 #X msg 47 353 Syllabo Basse;
 #X obj 275 345 RepieDrum/0master \$0;
 #X msg 168 351 Repie Drum;
@@ -672,13 +672,16 @@
 #X obj 275 271 SyllaOrgue/0master \$0;
 #X obj 275 365 RepieOrgue/0master \$0;
 #X obj 278 192 MyosotisNappe/0master \$0;
+#X msg 202 438 Myo Baroque;
 #X connect 3 0 2 0;
 #X connect 9 0 10 0;
 #X connect 21 0 24 0;
 #X connect 21 0 26 0;
+#X connect 21 0 35 0;
 #X connect 23 0 20 0;
 #X connect 24 0 20 0;
 #X connect 26 0 20 0;
 #X connect 27 0 20 0;
 #X connect 28 0 20 0;
+#X connect 35 0 20 0;
 #X coords 0 0 1 1 150 240 0;

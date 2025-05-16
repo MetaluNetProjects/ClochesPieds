@@ -1,0 +1,17 @@
+#		Config des paroles du Rotobservatoire
+
+
+lang fr ~
+lang en #
+
+parole point1	a	E	
+parole point2	z	SE
+parole point3	e	S
+parole point4	r	SO
+parole point5	t	O
+parole point6	y	NO
+parole point7	u	N
+parole point8	i	NE
+parole tropnombreux	o
+parole modeemploi	p
+
