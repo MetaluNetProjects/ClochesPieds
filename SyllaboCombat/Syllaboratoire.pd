@@ -1,10 +1,6 @@
-#N canvas 845 242 415 325 10;
-#X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
--1 -1 1 1;
-#X obj 11 185 r \$0-onoff;
+#N canvas 793 242 415 325 10;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
 1 10 -258699 -1 -1 2090 1;
-#X obj 12 231 switch~;
 #N canvas 77 256 298 213 master 0;
 #X obj 175 7 catch~ \$0-out;
 #X obj 140 111 *~;
@@ -172,23 +168,26 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 316 73 route Combat;
 #X obj 316 136 s \$0-onoff;
 #X obj 202 52 r \$0-onoff;
-#X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 9 1 20 0;
-#X connect 11 0 9 0;
-#X connect 12 0 13 0;
-#X connect 13 0 20 0;
-#X connect 14 0 10 0;
-#X connect 15 0 10 0;
-#X connect 16 0 10 0;
-#X connect 17 0 10 0;
-#X connect 18 0 10 0;
-#X connect 20 0 19 0;
-#X connect 21 0 25 0;
-#X connect 22 0 24 0;
-#X connect 23 0 24 0;
-#X connect 24 0 27 0;
-#X connect 25 0 26 0;
-#X connect 26 0 22 0;
-#X connect 26 1 23 0;
-#X connect 28 0 20 1;
+#X obj 13 184 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
+-1 -1 0 1;
+#X obj 13 211 r \$0-onoff;
+#X obj 13 234 switch~;
+#X connect 6 1 17 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 17 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 0;
+#X connect 15 0 7 0;
+#X connect 17 0 16 0;
+#X connect 18 0 22 0;
+#X connect 19 0 21 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 22 0 23 0;
+#X connect 23 0 19 0;
+#X connect 23 1 20 0;
+#X connect 25 0 17 1;
+#X connect 27 0 28 0;

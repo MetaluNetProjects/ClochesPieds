@@ -1,10 +1,6 @@
-#N canvas 2563 546 528 373 10;
-#X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
--1 -1 1 1;
-#X obj 11 185 r \$0-onoff;
+#N canvas 346 385 528 373 10;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
 1 10 -258699 -1 -1 1977 1;
-#X obj 12 231 switch~;
 #N canvas 58 168 375 291 master 0;
 #X obj 51 27 catch~ \$0-out;
 #X obj 83 118 *~;
@@ -102,7 +98,7 @@
 #X restore 11 31 pd interfguts;
 #X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
 -241291 -1 -1 0 1;
-#N canvas 0 0 283 124 unused 0;
+#N canvas 72 113 283 124 unused 0;
 #X obj 11 33 apmaster \$0;
 #X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
 ;
@@ -178,7 +174,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 383 27 r ClochesMode;
 #X msg 383 90 1;
 #X msg 412 90 0;
-#X obj 383 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 383 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 383 132 s \$0-onoff;
 #X obj 383 48 route Repie;
@@ -190,27 +186,30 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 141 176 clone -s 1 voice 4 \$0;
 #X obj 141 205 *~ 0.2;
 #X obj 142 234 lop~ 1000;
-#X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 9 1 22 0;
-#X connect 11 0 13 0;
-#X connect 13 0 22 0;
-#X connect 15 0 9 0;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 16 0;
-#X connect 20 0 19 0;
-#X connect 22 0 21 0;
-#X connect 23 0 22 1;
-#X connect 24 0 29 0;
-#X connect 25 0 27 0;
-#X connect 26 0 27 0;
+#X obj 13 175 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
+-1 -1 0 1;
+#X obj 13 202 r \$0-onoff;
+#X obj 13 225 switch~;
+#X connect 6 1 19 0;
+#X connect 8 0 10 0;
+#X connect 10 0 19 0;
+#X connect 12 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 0;
+#X connect 17 0 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 19 1;
+#X connect 21 0 26 0;
+#X connect 22 0 24 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 26 0 29 0;
 #X connect 27 0 28 0;
-#X connect 29 0 32 0;
+#X connect 29 0 22 0;
+#X connect 29 1 23 0;
 #X connect 30 0 31 0;
-#X connect 32 0 25 0;
-#X connect 32 1 26 0;
-#X connect 33 0 34 0;
-#X connect 34 0 35 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 7 0;
 #X connect 35 0 36 0;
-#X connect 36 0 10 0;

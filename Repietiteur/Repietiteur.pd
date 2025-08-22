@@ -1,12 +1,8 @@
-#N canvas 94 82 414 449 10;
+#N canvas 72 85 414 449 10;
 #X declare -path creb;
-#X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
--1 -1 1 1;
-#X obj 12 181 r \$0-onoff;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
 1 10 -258699 -1 -1 2277 1;
-#X obj 12 231 switch~;
-#N canvas 530 307 308 291 master 1;
+#N canvas 530 307 308 291 master 0;
 #X obj 209 36 catch~ \$0-out;
 #X obj 172 115 *~;
 #X obj 14 22 catch~ \$0-parole_out;
@@ -5248,7 +5244,7 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 150 288 *~;
 #X obj 166 246 +~ 0;
 #X obj 49 133 t f b;
-#X obj 89 156 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 89 156 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X obj 49 154 demux;
 #X obj 150 182 t b f;
@@ -5442,24 +5438,27 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 279 123 r ClochesMode;
 #X msg 279 186 1;
 #X msg 308 186 0;
-#X obj 279 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 279 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 279 228 s \$0-onoff;
 #X obj 279 144 route Repie;
 #X obj 279 165 route Classic;
-#X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 13 0 12 0;
-#X connect 16 0 13 0;
-#X connect 16 0 25 0;
-#X connect 25 0 18 0;
-#X connect 27 0 30 0;
-#X connect 28 0 29 0;
-#X connect 29 0 27 0;
-#X connect 32 0 37 0;
-#X connect 33 0 35 0;
+#X obj 14 180 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
+-1 -1 0 1;
+#X obj 14 207 r \$0-onoff;
+#X obj 14 230 switch~;
+#X connect 10 0 9 0;
+#X connect 13 0 10 0;
+#X connect 13 0 22 0;
+#X connect 22 0 15 0;
+#X connect 24 0 27 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
+#X connect 29 0 34 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
 #X connect 34 0 35 0;
-#X connect 35 0 36 0;
+#X connect 35 0 30 0;
+#X connect 35 1 31 0;
 #X connect 37 0 38 0;
-#X connect 38 0 33 0;
-#X connect 38 1 34 0;
