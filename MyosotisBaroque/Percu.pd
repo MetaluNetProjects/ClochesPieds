@@ -1,4 +1,4 @@
-#N canvas 197 171 507 567 10;
+#N canvas 145 171 507 567 10;
 #X text 71 5 Voix \$0 nom num;
 #X obj 15 25 table \$0-samp1;
 #X obj 15 42 table \$0-samp2;
@@ -104,7 +104,7 @@
 #X obj 195 45 random \$3;
 #X obj 201 163 t f f;
 #X obj 201 254 -;
-#N canvas 106 130 571 350 loadtables 0;
+#N canvas 72 130 571 350 loadtables 0;
 #X obj 132 27 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X floatatom 170 122 5 0 0 0 - - -;
@@ -117,7 +117,6 @@
 #X obj 132 206 makesymbol \$0-samp%s;
 #X msg 162 165 list \$2 \$1;
 #X msg 132 250 read -resize \$2 \$1;
-#X obj 148 45 loadbang;
 #X obj 251 165 s \$0-pitchs;
 #X msg 251 144 read \$1;
 #X obj 132 99 for++ 1 \$3 100;
@@ -125,24 +124,25 @@
 ;
 #X obj 162 187 makesymbol %s/Cloches/wav/MyosotisBaroque/\$2/\$2%s.wav
 ;
+#X obj 148 45 r \$0-loadtables;
 #X connect 0 0 5 0;
 #X connect 2 0 8 0;
 #X connect 2 1 4 0;
 #X connect 3 0 4 1;
-#X connect 3 0 15 0;
+#X connect 3 0 14 0;
 #X connect 4 0 9 0;
-#X connect 5 0 14 0;
+#X connect 5 0 13 0;
 #X connect 5 1 3 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
-#X connect 9 0 16 0;
+#X connect 9 0 15 0;
 #X connect 10 0 6 0;
-#X connect 11 0 5 0;
-#X connect 13 0 12 0;
-#X connect 14 0 1 0;
-#X connect 14 0 2 0;
-#X connect 15 0 13 0;
-#X connect 16 0 7 1;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 13 0 2 0;
+#X connect 14 0 12 0;
+#X connect 15 0 7 1;
+#X connect 16 0 5 0;
 #X restore 18 347 pd loadtables;
 #X obj 272 5 r \$1-keys;
 #X obj 272 25 route \$4;
@@ -167,6 +167,11 @@
 #X obj 201 120 t f f;
 #X obj 151 396 subpercu \$0 0;
 #X obj 164 416 subpercu \$0 1;
+#X obj 352 334 sel 1;
+#X obj 352 357 spigot 1;
+#X msg 380 379 0;
+#X obj 352 311 r \$1-onoff;
+#X obj 352 404 s \$0-loadtables;
 #X connect 19 0 30 0;
 #X connect 19 0 41 0;
 #X connect 21 0 19 0;
@@ -200,3 +205,8 @@
 #X connect 50 1 46 2;
 #X connect 51 0 25 0;
 #X connect 52 0 25 0;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 54 0 57 0;
+#X connect 55 0 54 1;
+#X connect 56 0 53 0;
