@@ -1,4 +1,4 @@
-#N canvas 723 209 377 534 10;
+#N canvas 536 433 377 534 10;
 #X obj 12 205 tgl 20 1 \$0-on-snd \$0-on-rcv empty 0 -6 0 8 -258699
 -1 -1 1 1;
 #X obj 11 185 r \$0-onoff;
@@ -28,7 +28,7 @@
 #X connect 8 0 9 1;
 #X connect 9 0 1 0;
 #X restore 11 50 pd master;
-#N canvas 527 464 177 224 Interface 0;
+#N canvas 198 452 177 224 Interface 1;
 #X obj 4 3 cnv 15 170 180 empty empty Rotobservatoire 20 12 2 14 -225271
 -66577 0;
 #X obj 69 28 tgl 30 0 \$0-rotob1-snd \$0-rotob1-rcv 1:E 7 15 1 10 -262131
@@ -157,7 +157,7 @@
 #X connect 1 0 0 0;
 #X restore 11 155 pd input;
 #X obj 131 108 init 1;
-#N canvas 40 79 483 418 Decoupeur 0;
+#N canvas 72 85 483 418 Decoupeur 1;
 #X obj 36 391 fragvox \$0;
 #X obj 269 8 catch~ \$0-out1;
 #X obj 278 41 catch~ \$0-out2;
@@ -175,7 +175,7 @@
 #X obj 263 283 table \$0-sample8 500000;
 #X obj 267 317 table \$0-samplelen 10;
 #X msg 36 187 \$1 \$1 \$2;
-#N canvas 110 177 604 439 saveloadsamples 0;
+#N canvas 72 177 604 439 saveloadsamples 0;
 #X obj 22 150 for++ 0 8;
 #X obj 19 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -239,7 +239,7 @@
 #X connect 27 0 6 0;
 #X connect 28 0 2 0;
 #X restore 141 14 pd saveloadsamples;
-#N canvas 668 117 518 651 record_samples 0;
+#N canvas 616 117 518 651 record_samples 0;
 #X obj 130 2 r~ \$0-in;
 #X obj 128 42 env~;
 #X obj 161 87 t f f f;
@@ -412,6 +412,8 @@
 #X obj 173 114 t f b;
 #X obj 280 371 throw~ \$0-out;
 #X obj 271 203 swav;
+#SUB settings /home/antoine/Datas/Sounds/Recordings/flutios.wav 0 0
+1 0.71;
 #X obj 295 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 223 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -421,6 +423,7 @@
 #X msg 273 173 nb \$1;
 #X obj 361 259 lop~ 2000;
 #X obj 379 297 subrev;
+#SUB settings 0.395 67.5 0.71;
 #X obj 173 181 demux;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
@@ -472,7 +475,7 @@
 -1 -1;
 #X obj 225 150 init 1;
 #X obj 101 332 hradio 20 1 0 6 \$0-loadbank \$0-loadbank-rcv loadbank
-0 -8 0 10 -262144 -1 -1 0;
+0 -8 0 10 -262144 -1 -1 2;
 #X obj 256 250 bng 20 250 50 0 \$0-reset_rec_count empty reset_rec_count
 -30 -7 0 10 -262144 -1 -1;
 #X obj 92 214 r Teleco;
@@ -494,6 +497,11 @@
 1;
 #X msg 49 429 6;
 #X obj 133 194 l ../Parole \$0 \$1 rotobservatoire;
+#X obj 165 219 r \$0-onoff;
+#X obj 165 242 sel 1;
+#X obj 165 265 spigot 1;
+#X msg 165 288 2;
+#X msg 193 287 0;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 10 0 9 0;
@@ -517,3 +525,9 @@
 #X connect 34 0 30 0;
 #X connect 35 0 33 0;
 #X connect 36 0 30 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 40 0 42 0;
+#X connect 41 0 19 0;
+#X connect 42 0 40 1;
