@@ -1,6 +1,5 @@
 #N canvas 981 347 657 609 10;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 5231 1;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 5231 1;
 #N canvas 72 160 298 213 master 0;
 #X obj 123 39 catch~ \$0-out;
 #X obj 140 111 *~;
@@ -20,20 +19,13 @@
 #X connect 8 0 7 1;
 #X restore 11 50 pd master;
 #N canvas 1165 315 132 154 Interface 0;
-#X obj 3 2 cnv 15 120 120 empty empty Myosotis 20 12 2 14 -225271 -66577
-0;
-#X obj 50 40 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 83 40 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 83 73 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 17 40 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 50 73 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 -228992
--1 -1 0 1;
-#X obj 17 73 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 -262131
--1 -1 0 1;
+#X obj 3 2 cnv 15 120 120 empty empty Myosotis 20 12 2 14 #d8fcd8 #404040 0;
+#X obj 50 40 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 83 40 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 83 73 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 17 40 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 50 73 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 #dce4fc #000000 #000000 0 1;
+#X obj 17 73 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
 #X text 3 124 keys w x c v b;
 #X text 63 135 n;
 #X restore 11 12 pd Interface;
@@ -41,8 +33,7 @@
 #X obj 81 45 keyname;
 #X obj 81 70 pack f s;
 #X obj 81 91 spigot;
-#X obj 131 95 tgl 15 0 empty empty keyboard 0 -6 1 8 -241291 -1 -1
-0 1;
+#X obj 131 95 tgl 15 0 empty empty keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #X obj 156 97 r \$0-getkeyb;
 #X obj 81 150 route w x c v b n;
 #X obj 22 20 dispatch \$0-myoso 0 5;
@@ -59,10 +50,8 @@
 #X obj 160 357 s \$0-deb1time;
 #X obj 69 357 s \$0-deb0time;
 #X obj 123 323 init 20;
-#X obj 119 302 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 217 159 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 119 302 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 217 159 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 2 0;
@@ -88,23 +77,16 @@
 #X connect 20 0 19 0;
 #X connect 21 0 15 0;
 #X restore 11 31 pd interfguts;
-#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
--241291 -1 -1 0 1;
+#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #N canvas 1 110 283 124 unused 0;
 #X obj 11 33 apmaster \$0;
-#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
-;
-#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
--1;
-#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
-10.11.12.13.14.15.16 122 -6 1 6 -258699 -1 -262144;
-#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
-_1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
-0;
+#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 #14e814 #000000 #000000;
+#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000;
+#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv 10.11.12.13.14.15.16 122 -6 1 6 #fc2828 #000000 #fcfcfc;
+#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 #fcfcfc #000000 #000000 0;
 #N canvas 628 101 443 334 file_patt_but 0;
 #X msg 27 31 \$1;
-#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 203 67 sel 0 1;
 #X msg 203 88 color 0 22 22;
 #X msg 226 112 color 13 22 22;
@@ -117,7 +99,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X msg 20 165 _apfile_ load \$1;
 #X msg 148 165 _apfile_ store \$1;
 #X obj 203 138 s \$0-file_patt_but-rcv;
-#X symbolatom 237 306 0 0 0 0 - - -;
+#X symbolatom 237 306 0 0 0 0 - - - 0;
 #X obj 249 286 s \$0-apmaster-rcv;
 #X msg 249 266 loadin;
 #X obj 237 202 r \$0-_apfile_-snd;
@@ -164,7 +146,6 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 135 199 s \$0-keys;
 #X obj 113 558 throw~ \$0-out;
 #X obj 150 490 subecho;
-#SUB settings 5.89212 0 0;
 #X obj 122 408 +~;
 #X obj 125 272 Voix \$0 Chant 16 1;
 #X obj 399 427 s \$0-Gammes;
@@ -179,26 +160,23 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 138 297 Voix \$0 Cello 8 2;
 #X obj 147 342 Voix \$0 Epinette 8 3;
 #X obj 169 381 Voix \$0 FluteB 8 4;
-#X obj 287 531 makesymbol %s/Cloches/wav/MyosotisBaroque/\$2/\$2%s.wav
-;
+#X obj 287 531 makesymbol %s/Cloches/wav/MyosotisBaroque/\$2/\$2%s.wav;
 #X obj 145 360 *~ 2;
 #X obj 205 422 l Percu \$0 Percu 12 0;
 #X obj 246 454 Percu \$0 Percu 12 5;
 #X obj 0 428 l Voix \$0 Epinette 8 5;
 #X msg 465 391 4 \$1 \, 0 \$1;
 #X obj 470 324 r /GAMME;
-#X floatatom 495 355 5 0 0 0 - - -;
+#X floatatom 495 355 5 0 0 0 - - - 0;
 #X obj -26 333 Voix \$0 GtElecClairSeb 8 0;
 #X obj 301 22 r ClochesMode;
 #X msg 301 85 1;
 #X msg 330 85 0;
-#X obj 301 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 301 108 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 301 127 s \$0-onoff;
 #X obj 301 43 route Myo;
 #X obj 301 64 route Baroque;
-#X obj 54 125 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
--1 -1 0 1;
+#X obj 54 125 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 #fc2828 #000000 #000000 0 1;
 #X obj 54 152 r \$0-onoff;
 #X obj 54 175 switch~;
 #X connect 6 0 7 0;

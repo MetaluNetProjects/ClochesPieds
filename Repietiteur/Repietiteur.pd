@@ -1,8 +1,7 @@
 #N canvas 72 85 414 449 10;
 #X declare -path creb;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 2277 1;
-#N canvas 530 307 308 291 master 0;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 2277 1;
+#N canvas 97 557 308 291 master 0;
 #X obj 209 36 catch~ \$0-out;
 #X obj 172 115 *~;
 #X obj 14 22 catch~ \$0-parole_out;
@@ -12,12 +11,14 @@
 #X obj 202 114 * 4;
 #X obj 202 71 r \$0-vol-snd;
 #X obj 149 72 hip~ 150;
-#X obj 43 131 subrev;
-#SUB settings 0.2 0.47 23.5;
+#X obj 41 157 subrev;
 #X obj 18 96 lop~ 2000;
 #X msg 234 136 3;
-#X floatatom 250 234 5 0 0 0 - - -;
+#X floatatom 250 234 5 0 0 0 - - - 0;
 #X obj 172 158 busrme 4;
+#X msg 196 230 1;
+#X msg 229 233 2;
+#X obj 29 127 *~ 0.05;
 #X connect 0 0 8 0;
 #X connect 1 0 13 0;
 #X connect 2 0 3 0;
@@ -29,35 +30,29 @@
 #X connect 7 0 5 0;
 #X connect 8 0 1 0;
 #X connect 9 0 1 0;
-#X connect 10 0 9 0;
+#X connect 10 0 16 0;
 #X connect 11 0 13 1;
 #X connect 12 0 13 1;
+#X connect 14 0 13 1;
+#X connect 15 0 13 1;
+#X connect 16 0 9 0;
 #X restore 11 50 pd master;
 #N canvas 488 202 112 90 Interface 0;
-#X obj 45 97 tgl 30 0 \$0-s1-snd \$0-s1-rcv 1 13 15 1 10 -262144 -1
--1 0 1;
-#X obj 77 97 tgl 30 0 \$0-s2-snd \$0-s2-rcv 2 13 15 1 10 -262144 -1
--1 0 1;
-#X obj 45 129 tgl 30 0 \$0-s3-snd \$0-s3-rcv 3 13 15 1 10 -262144 -1
--1 0 1;
-#X obj 77 129 tgl 30 0 \$0-s4-snd \$0-s4-rcv 4 13 15 1 10 -262144 -1
--1 0 1;
+#X obj 45 97 tgl 30 0 \$0-s1-snd \$0-s1-rcv 1 13 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 77 97 tgl 30 0 \$0-s2-snd \$0-s2-rcv 2 13 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 45 129 tgl 30 0 \$0-s3-snd \$0-s3-rcv 3 13 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 77 129 tgl 30 0 \$0-s4-snd \$0-s4-rcv 4 13 15 1 10 #fcfcfc #000000 #000000 0 1;
 #X text 4 67 keys w x c v;
-#X obj 5 38 bng 30 250 50 0 \$0-b1-snd \$0-b1-rcv 1 13 15 1 8 -262144
--1 -1;
-#X obj 6 4 bng 30 250 50 0 \$0-b2-snd \$0-b2-rcv 2 13 15 1 8 -262144
--1 -1;
-#X obj 40 4 bng 30 250 50 0 \$0-b3-snd \$0-b3-rcv 3 13 15 1 8 -262144
--1 -1;
-#X obj 40 37 bng 30 250 50 0 \$0-b4-snd \$0-b4-rcv 4 13 15 1 8 -262144
--1 -1;
+#X obj 5 38 bng 30 250 50 0 \$0-b1-snd \$0-b1-rcv 1 13 15 1 8 #fcfcfc #000000 #000000;
+#X obj 6 4 bng 30 250 50 0 \$0-b2-snd \$0-b2-rcv 2 13 15 1 8 #fcfcfc #000000 #000000;
+#X obj 40 4 bng 30 250 50 0 \$0-b3-snd \$0-b3-rcv 3 13 15 1 8 #fcfcfc #000000 #000000;
+#X obj 40 37 bng 30 250 50 0 \$0-b4-snd \$0-b4-rcv 4 13 15 1 8 #fcfcfc #000000 #000000;
 #X restore 11 12 pd Interface;
 #N canvas 459 168 821 526 interfguts 0;
 #X obj 14 39 keyname;
 #X obj 14 64 pack f s;
 #X obj 14 85 spigot;
-#X obj 64 89 tgl 15 0 empty empty keyboard 0 -6 1 8 -241291 -1 -1 0
-1;
+#X obj 64 89 tgl 15 0 empty empty keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #X obj 12 11 dispatch \$0-s 1 4;
 #X obj 89 91 r \$0-getkeyb;
 #X obj 14 136 route w x c v;
@@ -317,21 +312,14 @@
 #N canvas 0 0 145 40 show8bits 0;
 #X obj 1 1 inlet;
 #X obj 41 1 route 7 6 5 4 3 2 1 0;
-#X obj 1 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1;
-#X obj 18 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 36 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 54 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 72 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 89 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 107 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 125 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 1 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 18 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 36 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 54 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 72 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 89 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 107 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 125 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -346,21 +334,14 @@
 #N canvas 0 0 145 37 show8bits 0;
 #X obj 1 1 inlet;
 #X obj 41 1 route 7 6 5 4 3 2 1 0;
-#X obj 1 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1;
-#X obj 18 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 36 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 54 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 72 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 89 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 107 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 125 18 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 1 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 18 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 36 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 54 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 72 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 89 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 107 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 125 18 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -907,11 +888,11 @@
 #X connect 17 0 0 0;
 #X restore 535 230 pd debounce8;
 #X obj 351 139 route 0 1 2;
-#X floatatom 350 165 5 0 0 0 - - -;
-#X floatatom 391 165 5 0 0 0 - - -;
-#X floatatom 434 167 5 0 0 0 - - -;
-#X floatatom 485 152 5 0 0 0 - - -;
-#X floatatom 521 152 5 0 0 0 - - -;
+#X floatatom 350 165 5 0 0 0 - - - 0;
+#X floatatom 391 165 5 0 0 0 - - - 0;
+#X floatatom 434 167 5 0 0 0 - - - 0;
+#X floatatom 485 152 5 0 0 0 - - - 0;
+#X floatatom 521 152 5 0 0 0 - - - 0;
 #X obj 486 126 route 0 1;
 #X msg 385 188 255 \$1;
 #X obj 385 208 -;
@@ -920,10 +901,8 @@
 #X text 564 192 2.2 : plein;
 #X obj 588 14 r \$1-repie-btdriver;
 #X obj 553 174 s \$1-repie-pile;
-#X obj 588 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 323 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 588 86 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 323 78 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 383 317 route 7 6 5 4 3 2 1 0;
 #X obj 148 299 s \$0-antirebond;
 #X obj 107 328 s \$0-deb1time;
@@ -937,8 +916,7 @@
 #X obj 57 104 mavg 20;
 #X obj 59 128 range 0 1024 0 5;
 #X obj 58 56 metro 400;
-#X obj 58 31 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
+#X obj 58 31 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 1 1;
 #X obj 58 81 f;
 #X obj 85 14 inlet val_pile;
 #X obj 178 14 inlet on-state;
@@ -960,10 +938,8 @@
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
 #X restore 563 136 pd rtn-piles/onoff;
-#X obj 564 156 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 304 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 564 156 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 304 192 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 298 326 print;
 #X obj 223 216 s \$0-b-rcv;
 #X obj 458 421 s \$0-s-rcv;
@@ -1037,20 +1013,21 @@
 #X restore 11 31 pd interfguts;
 #N canvas 582 415 731 191 paroles 0;
 #X obj 5 277 switch~;
-#X obj 5 260 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
-#N canvas 844 296 360 313 all_stuff 0;
-#N canvas 36 506 337 244 parolesdir 0;
+#X obj 5 260 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
+#N canvas 844 296 360 313 all_stuff 1;
+#N canvas 141 516 337 244 parolesdir 0;
 #X obj 9 5 r \$0-lang;
 #X obj 114 138 s \$0-parole_dir;
 #X obj 85 6 r \$0-maindir;
 #X obj 64 51 pack s s;
-#X symbolatom 64 182 0 0 0 0 - - -;
+#X symbolatom 64 182 0 0 0 0 - - - 0;
 #X msg 64 71 list \$2 \$1;
 #X obj 85 25 t b s;
 #X obj 84 158 s \$0-parole_updateall;
 #X obj 84 116 t s s;
 #X obj 64 94 makesymbol %s/Repietiteur/%s/;
+#X obj 191 39 r ClochesWavPath;
+#X obj 43 59 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X connect 0 0 3 0;
 #X connect 2 0 6 0;
 #X connect 3 0 5 0;
@@ -1060,6 +1037,7 @@
 #X connect 8 1 1 0;
 #X connect 9 0 4 0;
 #X connect 9 0 8 0;
+#X connect 11 0 3 0;
 #X restore 20 116 pd parolesdir;
 #N canvas 302 333 371 458 delfile 0;
 #X obj 43 148 symbol;
@@ -1104,12 +1082,12 @@
 #X obj 43 309 symbol;
 #X obj 117 258 r \$0-parole;
 #X obj 207 116 s \$0-diseur;
-#X symbolatom 20 378 0 0 0 0 - - -;
+#X symbolatom 20 378 0 0 0 0 - - - 0;
 #N canvas 228 382 450 398 update 0;
 #X obj 74 6 inlet;
 #N canvas 723 391 450 300 current 0;
 #X obj 316 75 r \$0-parole;
-#X symbolatom 187 231 0 0 0 0 - - -;
+#X symbolatom 187 231 0 0 0 0 - - - 0;
 #X obj 251 97 pack f f s;
 #X obj 283 53 r \$0-parole_mode;
 #X obj 243 34 r \$0-parole_num;
@@ -1119,7 +1097,7 @@
 #X obj 273 154 != 0;
 #X obj 243 72 t f f;
 #X obj 273 178 outlet;
-#X floatatom 197 97 5 0 0 0 - - -;
+#X floatatom 197 97 5 0 0 0 - - - 0;
 #X obj 139 120 inlet;
 #X connect 0 0 2 2;
 #X connect 2 0 5 1;
@@ -1135,17 +1113,15 @@
 #X connect 12 0 5 0;
 #X restore 74 27 pd current;
 #X obj 38 52 l;
-#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 -262144 -1 -1
-0;
+#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X obj 288 22 unpack;
-#X floatatom 288 64 5 0 0 0 - - -;
+#X floatatom 288 64 5 0 0 0 - - - 0;
 #X obj 288 44 tabread \$0-used;
-#X floatatom 345 24 5 0 0 0 - - -;
+#X floatatom 345 24 5 0 0 0 - - - 0;
 #X obj 18 296 outlet;
-#X obj 30 17 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 30 17 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 74 69 demux;
-#X floatatom 218 41 5 0 0 0 - - -;
+#X floatatom 218 41 5 0 0 0 - - - 0;
 #X text 94 49 num \, mode \, parole;
 #X msg 98 94 \$3 \$1 \$2;
 #X text 163 96 parole \, num \, mode;
@@ -1316,11 +1292,10 @@
 #X connect 27 1 28 0;
 #X restore 247 200 pd update;
 #X obj 247 221 s \$0-update_done;
-#X obj 216 352 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 216 352 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 50 248 system;
 #X msg 50 202 rm -f \$1;
-#X symbolatom 136 171 0 0 0 0 - - -;
+#X symbolatom 136 171 0 0 0 0 - - - 0;
 #N canvas 0 0 372 346 modeprotect 0;
 #X obj 24 23 inlet;
 #X obj 24 89 spigot;
@@ -1352,10 +1327,9 @@
 #X connect 18 0 17 0;
 #X connect 20 0 2 0;
 #X restore 20 205 pd delfile;
-#N canvas 50 123 451 455 savetab 0;
+#N canvas 115 389 451 455 savetab 1;
 #X obj 105 161 loadbang;
-#X obj 105 142 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
--1;
+#X obj 105 142 bng 15 250 50 0 empty empty empty 20 8 0 8 #fcfcfc #000000 #000000;
 #X obj 105 184 symbol \$0-lesample;
 #X obj 73 208 pack s s f;
 #X obj 29 6 r \$0-insamplength;
@@ -1363,7 +1337,7 @@
 #X obj 73 77 symbol;
 #X obj 73 49 t b f;
 #X obj 29 26 moses 1;
-#X symbolatom 22 390 0 0 0 0 - - -;
+#X symbolatom 22 390 0 0 0 0 - - - 0;
 #X msg 73 346 0;
 #X obj 103 293 t b b;
 #X obj 73 273 sel 0;
@@ -1371,7 +1345,7 @@
 #X obj 68 22 inlet;
 #N canvas 374 336 450 300 current 0;
 #X obj 316 75 r \$0-parole;
-#X symbolatom 187 231 0 0 0 0 - - -;
+#X symbolatom 187 231 0 0 0 0 - - - 0;
 #X obj 251 97 pack f f s;
 #X obj 283 53 r \$0-parole_mode;
 #X obj 243 34 r \$0-parole_num;
@@ -1382,7 +1356,7 @@
 #X obj 273 154 != 0;
 #X obj 243 72 t f f;
 #X obj 273 178 outlet;
-#X floatatom 197 97 5 0 0 0 - - -;
+#X floatatom 197 97 5 0 0 0 - - - 0;
 #X obj 113 54 r \$0-rec_parole;
 #X connect 0 0 2 2;
 #X connect 2 0 5 1;
@@ -1400,17 +1374,15 @@
 #X restore 115 21 pd current;
 #X obj 68 50 l;
 #X obj 287 84 table \$0-used 10;
-#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 -262144 -1 -1
-0;
+#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X obj 288 22 unpack;
-#X floatatom 288 64 5 0 0 0 - - -;
+#X floatatom 288 64 5 0 0 0 - - - 0;
 #X obj 288 44 tabread \$0-used;
-#X floatatom 345 24 5 0 0 0 - - -;
+#X floatatom 345 24 5 0 0 0 - - - 0;
 #X obj 18 296 outlet;
-#X obj 48 23 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 48 23 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 68 70 demux;
-#X floatatom 206 47 5 0 0 0 - - -;
+#X floatatom 206 47 5 0 0 0 - - - 0;
 #X text 94 49 num \, mode \, parole;
 #X msg 98 94 \$3 \$1 \$2;
 #X text 163 96 parole \, num \, mode;
@@ -1581,23 +1553,19 @@
 #X connect 29 0 27 0;
 #X connect 29 1 26 0;
 #X restore 103 312 pd update;
-#X obj 132 337 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
-#X symbolatom 123 77 0 0 0 0 - - -;
-#X obj 73 252 soundfiler2;
+#X obj 132 337 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
+#X symbolatom 123 77 0 0 0 0 - - - 0;
 #X obj 73 367 s \$0-recording;
 #X obj 119 48 r \$0-rec_file;
-#X obj 186 278 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 186 278 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 8 176 sel <none>;
-#X obj 11 239 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 11 239 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #N canvas 106 288 450 386 update 0;
 #X obj 98 92 unpack f f s;
 #X obj 68 22 inlet;
 #N canvas 374 336 450 300 current 0;
 #X obj 316 75 r \$0-parole;
-#X symbolatom 187 231 0 0 0 0 - - -;
+#X symbolatom 187 231 0 0 0 0 - - - 0;
 #X obj 251 97 pack f f s;
 #X obj 283 53 r \$0-parole_mode;
 #X obj 243 22 r \$0-parole_num;
@@ -1608,7 +1576,7 @@
 #X obj 273 154 != 0;
 #X obj 243 72 t f f;
 #X obj 273 178 outlet;
-#X floatatom 197 97 5 0 0 0 - - -;
+#X floatatom 197 97 5 0 0 0 - - - 0;
 #X obj 113 37 r \$0-rec_parole;
 #X connect 0 0 2 2;
 #X connect 3 0 2 1;
@@ -1630,12 +1598,11 @@
 #X obj 219 201 - 1;
 #X obj 137 119 * 10;
 #X obj 137 243 +;
-#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 -262144 -1 -1
-0;
+#X obj 288 4 hdl 15 0 0 10 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X obj 288 22 unpack;
-#X floatatom 288 64 5 0 0 0 - - -;
+#X floatatom 288 64 5 0 0 0 - - - 0;
 #X obj 288 44 tabread \$0-used;
-#X floatatom 345 24 5 0 0 0 - - -;
+#X floatatom 345 24 5 0 0 0 - - - 0;
 #N canvas 0 0 265 205 set_num 0;
 #X obj 57 129 tabwrite \$0-used;
 #X msg 57 108 1;
@@ -1691,7 +1658,7 @@
 #X obj 125 122 for+++ 1 9;
 #X obj 294 302 +;
 #X msg 184 257 1;
-#X floatatom 101 492 5 0 0 0 - - -;
+#X floatatom 101 492 5 0 0 0 - - - 0;
 #X obj 35 408 print;
 #X obj 138 319 pack f f;
 #X connect 0 0 17 0;
@@ -1764,14 +1731,13 @@
 #X connect 15 1 1 1;
 #X restore 151 268 pd scan_used;
 #X obj 18 296 outlet;
-#X symbolatom 187 114 10 0 0 0 - - -;
-#X obj 48 23 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X symbolatom 187 114 10 0 0 0 - - - 0;
+#X obj 48 23 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 98 118 t b f;
 #X obj 68 70 demux;
-#X floatatom 70 145 5 0 0 0 - - -;
+#X floatatom 70 145 5 0 0 0 - - - 0;
 #X obj 15 98 print;
-#X floatatom 188 51 5 0 0 0 - - -;
+#X floatatom 188 51 5 0 0 0 - - - 0;
 #X obj 287 84 table \$0-usedd 10;
 #X connect 0 0 22 0;
 #X connect 0 0 24 0;
@@ -1803,37 +1769,37 @@
 #X connect 23 1 0 0;
 #X restore 304 315 pd update;
 #X obj 185 362 s \$0-update_done;
+#X obj 73 252 soundfiler;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
 #X connect 3 0 5 0;
 #X connect 4 0 8 0;
-#X connect 5 0 16 0;
+#X connect 5 0 23 0;
 #X connect 6 0 9 0;
-#X connect 6 0 20 0;
+#X connect 6 0 19 0;
 #X connect 7 0 6 0;
 #X connect 7 1 3 2;
 #X connect 8 0 10 0;
 #X connect 8 1 7 0;
-#X connect 10 0 17 0;
-#X connect 10 0 23 0;
+#X connect 10 0 16 0;
+#X connect 10 0 22 0;
 #X connect 11 0 13 0;
 #X connect 12 0 10 0;
 #X connect 12 1 11 0;
 #X connect 13 0 10 0;
 #X connect 13 0 14 0;
-#X connect 16 0 12 0;
-#X connect 18 0 6 1;
-#X connect 18 0 15 0;
-#X connect 20 0 10 0;
-#X connect 20 0 21 0;
-#X connect 20 1 3 0;
+#X connect 17 0 6 1;
+#X connect 17 0 15 0;
+#X connect 19 0 10 0;
+#X connect 19 0 20 0;
+#X connect 19 1 3 0;
+#X connect 23 0 12 0;
 #X restore 20 181 pd savetab;
 #N canvas 19 103 450 424 config 0;
 #X obj 86 56 r \$0-maindir;
 #X obj 86 77 symbol;
-#X obj 67 57 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 67 57 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X msg 19 146 print;
 #X obj 86 180 textfile;
 #X obj 86 158 until;
@@ -1950,10 +1916,10 @@
 #X obj 67 291 moses 1;
 #X obj 77 138 t b b f;
 #X msg 104 226 1;
-#X symbolatom 184 367 10 0 0 0 - - -;
-#X floatatom 192 205 5 0 0 0 - - -;
+#X symbolatom 184 367 10 0 0 0 - - - 0;
+#X floatatom 192 205 5 0 0 0 - - - 0;
 #X msg 146 228 0;
-#X floatatom 67 313 5 0 0 0 - - -;
+#X floatatom 67 313 5 0 0 0 - - - 0;
 #X obj 213 9 r \$0-parole_dir;
 #X msg 356 243 symbol ciao;
 #X obj 25 28 b;
@@ -2003,8 +1969,7 @@
 #X msg 234 52 find \$1;
 #X obj 234 94 moses 1;
 #X obj 278 114 - 1;
-#X obj 502 44 hdl 15 0 0 10 empty empty parole 20 -6 0 10 -262144 -1
--1 0;
+#X obj 502 44 hdl 15 0 0 10 empty empty parole 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 427 139 table \$0-parole_used 10000;
 #X obj 278 134 * 100;
 #X obj 48 209 shell;
@@ -2056,17 +2021,14 @@
 #X obj 67 390 s \$0-update_done;
 #X obj 308 492 + 1;
 #X obj 187 271 t b a b;
-#X obj 427 18 hdl 15 0 0 10 empty empty mode 20 -6 0 10 -262144 -1
--1 0;
+#X obj 427 18 hdl 15 0 0 10 empty empty mode 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 117 35 t s s;
 #N canvas 346 0 542 537 view_state 0;
 #X obj 109 275 tabread \$0-parole_used;
 #X obj 109 255 +;
-#X obj 211 36 hdl 15 0 0 10 empty empty parole 20 -6 0 10 -262144 -1
--1 0;
+#X obj 211 36 hdl 15 0 0 10 empty empty parole 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 211 75 unpack;
-#X obj 51 35 hdl 15 0 0 10 empty empty mode 20 -6 0 10 -262144 -1 -1
-0;
+#X obj 51 35 hdl 15 0 0 10 empty empty mode 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 51 76 unpack;
 #X obj 109 123 +;
 #X obj 211 95 * 100;
@@ -2096,8 +2058,8 @@
 #X obj 51 55 inlet;
 #X obj 109 102 t b f;
 #X obj 339 140 tabread \$0-parole_used;
-#X floatatom 342 172 5 0 0 0 - - -;
-#X floatatom 339 112 5 0 0 0 - - -;
+#X floatatom 342 172 5 0 0 0 - - - 0;
+#X floatatom 339 112 5 0 0 0 - - - 0;
 #X connect 0 0 9 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -2154,25 +2116,22 @@
 #X obj 94 213 r parole_used;
 #X obj 433 327 print parole_used;
 #X obj 21 68 print;
-#X obj 521 307 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 521 307 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 94 249 route __done__;
-#X obj 79 458 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 79 458 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 67 361 del 100;
 #X obj 391 185 pack s f;
 #X obj 503 354 unwonk f f f;
-#X msg 396 207 echo "parole_getused3 \$1 \$2| pdsend 8000" | at now
-2> /dev/null;
+#X msg 396 207 echo "parole_getused3 \$1 \$2| pdsend 8000" | at now 2> /dev/null;
 #X obj 430 284 print;
 #X obj 272 335 min 2;
 #X obj 187 363 demux 0 1 2;
 #X obj 187 294 drip;
 #X obj 500 278 l netreceive 8002;
 #X msg 12 113 666;
-#X floatatom 12 134 5 0 0 0 - - -;
+#X floatatom 12 134 5 0 0 0 - - - 0;
 #X msg 22 286 666;
-#X floatatom 22 307 5 0 0 0 - - -;
+#X floatatom 22 307 5 0 0 0 - - - 0;
 #X connect 0 0 38 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
@@ -2238,12 +2197,11 @@
 #X connect 61 0 62 0;
 #X restore 106 226 pd update_parole;
 #N canvas 106 73 622 620 keyboard 0;
-#X obj 304 158 hdl 15 0 0 9 empty empty empty 0 -6 0 8 -262144 -1 -1
-0;
+#X obj 304 158 hdl 15 0 0 9 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X obj 304 176 unpack;
 #X obj 18 11 key;
 #X msg 18 79 1;
-#X floatatom 45 12 5 0 0 0 - - -;
+#X floatatom 45 12 5 0 0 0 - - - 0;
 #X msg 55 79 0;
 #X obj 239 136 moses 49;
 #X obj 239 158 moses 58;
@@ -2258,7 +2216,7 @@
 #X msg 114 57 \$2 \$1;
 #X obj 77 129 s \$0-parole_delfile;
 #X obj 77 103 spigot;
-#X floatatom 125 105 5 0 0 0 - - -;
+#X floatatom 125 105 5 0 0 0 - - - 0;
 #X obj 114 37 r \$0-keyname;
 #X obj 245 37 print;
 #X obj 114 78 route Mode_switch Super_L;
@@ -2271,11 +2229,11 @@
 #X connect 7 1 4 0;
 #X restore 210 113 pd delfile?;
 #X msg 323 356 find \$1;
-#X symbolatom 403 430 10 0 0 0 - - -;
+#X symbolatom 403 430 10 0 0 0 - - - 0;
 #X obj 323 377 slist \$0-parole_keylist;
 #X obj 323 400 slist \$0-parolelist;
 #X msg 155 380 find \$1;
-#X symbolatom 274 462 10 0 0 0 - - -;
+#X symbolatom 274 462 10 0 0 0 - - - 0;
 #X obj 155 401 slist \$0-lang_keylist;
 #X obj 155 424 slist \$0-langlist;
 #X obj 256 480 s \$0-lang;
@@ -2283,7 +2241,7 @@
 #X obj 264 244 r \$0-parole;
 #X obj 239 224 t b f;
 #X obj 239 267 dire \$0 bonjour;
-#X symbolatom 114 325 0 0 0 0 - - -;
+#X symbolatom 114 325 0 0 0 0 - - - 0;
 #X obj 181 91 s \$0-parole_recnewfile;
 #X obj 18 124 s \$0-parole_rec_this;
 #N canvas 0 0 532 297 set_mode 0;
@@ -2301,8 +2259,7 @@
 #X obj 230 204 outlet;
 #X obj 230 179 f;
 #X obj 112 95 inlet;
-#X obj 112 115 sel KP_0 KP_1 KP_2 KP_3 KP_4 KP_5 KP_6 KP_7 KP_8 KP_9
-;
+#X obj 112 115 sel KP_0 KP_1 KP_2 KP_3 KP_4 KP_5 KP_6 KP_7 KP_8 KP_9;
 #X connect 0 0 12 0;
 #X connect 1 0 12 0;
 #X connect 2 0 12 0;
@@ -2327,7 +2284,7 @@
 #X connect 14 8 8 0;
 #X connect 14 9 9 0;
 #X restore 40 385 pd set_mode;
-#X floatatom 82 407 5 0 0 0 - - -;
+#X floatatom 82 407 5 0 0 0 - - - 0;
 #X obj 355 244 r \$0-parole_mode;
 #X obj 65 425 r \$0-parole;
 #X obj 40 466 dire \$0 bonjour;
@@ -2382,8 +2339,7 @@
 #X obj 174 291 f;
 #X obj 160 40 t b f;
 #X obj 111 87 r \$0-recording;
-#X obj 85 343 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 85 343 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X connect 0 0 14 0;
 #X connect 2 0 4 0;
 #X connect 2 0 10 0;
@@ -2493,7 +2449,7 @@
 #N canvas 242 15 423 496 recnewfile 0;
 #X obj 103 130 slist \$0-parolelist;
 #X msg 103 110 find \$1;
-#X floatatom 247 412 5 0 0 0 - - -;
+#X floatatom 247 412 5 0 0 0 - - - 0;
 #X obj 160 329 sel 0;
 #X obj 160 243 i;
 #X obj 187 243 + 1;
@@ -2572,7 +2528,7 @@
 #X connect 30 0 22 0;
 #X restore 20 137 pd recnewfile;
 #N canvas 63 467 501 291 rec_this 0;
-#X symbolatom 35 233 0 0 0 0 - - -;
+#X symbolatom 35 233 0 0 0 0 - - - 0;
 #X obj 193 75 r \$0-parole;
 #X obj 156 97 symbol;
 #X msg 156 232 1;
@@ -2632,25 +2588,22 @@
 #X connect 11 1 10 0;
 #X connect 14 0 4 0;
 #X restore 20 157 pd rec_this;
-#X obj 200 29 cnv 15 140 140 empty empty Editing 20 -12 0 16 -225271
--2625 0;
-#X symbolatom 210 58 10 0 0 0 - - -;
+#X obj 200 29 cnv 15 140 140 empty empty Editing 20 -12 0 16 #d8fcd8 #00a400 0;
+#X symbolatom 210 58 10 0 0 0 - - - 0;
 #X obj 210 35 r \$0-parole;
 #X obj 209 129 r \$0-parole_mode;
-#X floatatom 209 149 5 0 0 0 - - -;
+#X floatatom 209 149 5 0 0 0 - - - 0;
 #X obj 211 83 r \$0-parole_num;
-#X floatatom 210 103 5 0 0 0 - - -;
+#X floatatom 210 103 5 0 0 0 - - - 0;
 #N canvas 0 76 450 300 editconfig 0;
 #X obj 146 230 system;
 #X obj 212 90 r \$0-maindir;
-#X obj 146 109 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 146 109 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 146 89 subbang;
 #X obj 146 67 r \$0-editconfig;
 #X obj 336 65 getenv PWD;
-#X symbolatom 336 108 0 0 0 0 - - -;
-#X obj 336 36 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X symbolatom 336 108 0 0 0 0 - - - 0;
+#X obj 336 36 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 146 169 absolutepath;
 #X msg 146 148 symbol kbconfig.txt;
 #X msg 146 209 echo kwrite \$1 -display :0.0 |at now;
@@ -2663,29 +2616,28 @@
 #X connect 9 0 8 0;
 #X connect 10 0 0 0;
 #X restore 20 56 pd editconfig;
-#N canvas 837 332 450 300 maindir 0;
+#N canvas 526 606 450 300 maindir 1;
 #X obj 20 13 loadbang;
-#X obj 85 58 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
-#X obj 85 123 s \$0-maindir;
+#X obj 85 58 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
+#X obj 84 183 s \$0-maindir;
 #X obj 85 36 subbang;
 #X obj 168 22 r \$0-reload_all;
 #X obj 85 78 getenv HOME;
 #X obj 268 177 print;
 #X obj 85 101 makesymbol %s/Cloches/wav;
+#X obj 84 152 r ClochesWavPath;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 3 0 1 0;
 #X connect 4 0 1 0;
 #X connect 5 0 7 0;
-#X connect 7 0 2 0;
+#X connect 8 0 2 0;
 #X restore 20 16 pd maindir;
-#N canvas 366 82 607 595 update_all_new 0;
+#N canvas 366 82 607 595 update_all_new 1;
 #X obj 142 390 textfile;
 #X obj 118 570 print;
 #X obj 142 290 t b b;
-#X obj 142 270 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 142 270 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 142 412 a2l;
 #X obj 165 482 * 100;
 #X obj 189 501 * 10;
@@ -2710,27 +2662,23 @@
 #X obj 142 334 metro 10;
 #X msg 142 314 1;
 #X msg 182 312 0;
-#X obj 239 398 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 239 398 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 16 77 absolutepath;
 #X msg 16 57 symbol kbconfig.txt;
 #X obj 225 78 absolutepath;
 #X msg 225 57 symbol paroles_getused;
 #X obj 16 35 t b b;
-#X obj 155 4 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 155 4 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 317 302 r \$0-parole_dir;
 #X obj 280 322 symbol;
 #X msg 280 364 clear \, read \$1 cr \, rewind;
 #X obj 280 341 makesymbol %sparoleset.txt;
-#X obj 297 283 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
-#X obj 194 10 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 297 283 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
+#X obj 194 10 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X msg 27 301 666;
-#X floatatom 27 322 5 0 0 0 - - -;
+#X floatatom 27 322 5 0 0 0 - - - 0;
 #X msg 13 159 666;
-#X floatatom 13 180 5 0 0 0 - - -;
+#X floatatom 13 180 5 0 0 0 - - - 0;
 #X obj 476 336 s \$0-info_cnvsrcv;
 #X obj 476 294 del 1000;
 #X msg 503 270 stop;
@@ -2745,11 +2693,9 @@
 #X obj 336 98 symbol \$0-paroles_getused;
 #X obj 142 223 r \$0-paroles_getused;
 #X obj 336 76 loadbang;
-#X obj 399 77 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 399 77 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X msg 72 126 list \$2 \$1 \$2/paroleset.txt 8002 \$4 \$3;
-#X msg 169 170 echo " \$6 \$1 \$2 \$3 \$4 \$5 |pdsend 8002" |at now
-2> /dev/null;
+#X msg 169 170 echo " \$6 \$1 \$2 \$3 \$4 \$5 |pdsend 8002" |at now 2> /dev/null;
 #X msg 73 149 nohup sh -c "\$6 \$1 \$2 \$3 \$4 \$5 | pdsend 8002";
 #X connect 0 0 4 0;
 #X connect 0 1 27 0;
@@ -2848,10 +2794,8 @@
 #X obj 6 121 b;
 #X obj 58 259 del 20;
 #X msg 150 145 stop;
-#X obj 107 341 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
-#X obj 59 342 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 107 341 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 59 342 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X connect 1 0 15 0;
 #X connect 1 0 16 0;
 #X connect 2 0 11 0;
@@ -2889,8 +2833,7 @@
 #X obj 17 24 sel 0;
 #X obj 143 247 sigzero~;
 #X obj 180 179 loadbang;
-#X obj 180 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 180 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 143 287 s \$0-disant2;
 #X obj 17 4 r \$0-diseur2;
 #X obj 23 286 switch~;
@@ -2901,19 +2844,17 @@
 #X obj 118 85 r \$0-vol2;
 #X msg 81 87 1;
 #X obj 59 66 t s b b;
-#X floatatom 221 114 5 0 0 0 - - -;
+#X floatatom 221 114 5 0 0 0 - - - 0;
 #X msg 117 188 0;
 #X obj 80 112 1;
 #X obj 127 39 s \$0-eff_out-bypass;
 #X msg 128 19 1;
-#X floatatom 240 258 5 0 0 0 - - -;
+#X floatatom 240 258 5 0 0 0 - - - 0;
 #X obj 207 14 t a b;
 #X obj 136 162 del 20;
 #X msg 139 140 stop;
-#X obj 98 279 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 165 271 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
+#X obj 98 279 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 165 271 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 4 100 b;
 #X connect 1 0 16 0;
 #X connect 2 0 11 0;
@@ -2956,8 +2897,7 @@
 #X obj 44 38 sel 0;
 #X obj 119 305 sigzero~;
 #X obj 253 250 loadbang;
-#X obj 253 226 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 253 226 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 44 15 r \$0-diseur3;
 #X obj 119 331 s \$0-disant3;
 #X obj 74 241 throw~ \$0-parole_out2;
@@ -2970,8 +2910,8 @@
 #X obj 74 99 t s b b;
 #X obj 74 219 *~ 1;
 #X obj 152 124 r \$0-vol3;
-#X floatatom 199 173 5 0 0 0 - - -;
-#X floatatom 246 145 5 0 0 0 - - -;
+#X floatatom 199 173 5 0 0 0 - - - 0;
+#X floatatom 246 145 5 0 0 0 - - - 0;
 #X obj 100 145 1;
 #X obj 12 138 b;
 #X obj 12 166 del 20;
@@ -3013,8 +2953,7 @@
 #X obj 17 40 sel 0;
 #X obj 131 183 sigzero~;
 #X obj 194 109 loadbang;
-#X obj 194 85 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 194 85 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 131 229 s \$0-disant4;
 #X obj 17 17 r \$0-diseur4;
 #X obj 47 151 throw~ \$0-parole_out2;
@@ -3075,8 +3014,8 @@
 #X obj 125 36 inlet;
 #X obj 109 244 outlet;
 #X obj 79 108 sel 0;
-#X floatatom 48 162 5 0 0 0 - - -;
-#X floatatom 23 115 5 0 0 0 - - -;
+#X floatatom 48 162 5 0 0 0 - - - 0;
+#X floatatom 23 115 5 0 0 0 - - - 0;
 #X obj 79 272 outlet;
 #X obj 109 152 random;
 #X connect 0 0 8 0;
@@ -3200,7 +3139,7 @@
 #X obj 68 212 sel 0;
 #X obj 86 234 b;
 #X msg 54 235 0;
-#X floatatom 27 312 5 0 0 0 - - -;
+#X floatatom 27 312 5 0 0 0 - - - 0;
 #N canvas 466 116 399 248 humeur 0;
 #X obj 149 46 sel -4 -3 -2 -1;
 #X obj 138 119 f;
@@ -3368,8 +3307,7 @@
 #X obj 17 24 sel 0;
 #X obj 143 247 sigzero~;
 #X obj 180 179 loadbang;
-#X obj 180 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 180 155 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 23 286 switch~;
 #X msg 23 243 1;
 #X obj 59 161 readsf~ 1;
@@ -3377,17 +3315,15 @@
 #X obj 59 187 *~ 1;
 #X msg 81 87 1;
 #X obj 59 66 t s b b;
-#X floatatom 221 114 5 0 0 0 - - -;
+#X floatatom 221 114 5 0 0 0 - - - 0;
 #X msg 117 188 0;
 #X obj 80 112 1;
-#X floatatom 240 258 5 0 0 0 - - -;
+#X floatatom 240 258 5 0 0 0 - - - 0;
 #X obj 105 23 t a b;
 #X obj 136 162 del 20;
 #X msg 139 140 stop;
-#X obj 98 279 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X obj 165 271 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
+#X obj 98 279 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X obj 165 271 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 4 100 b;
 #X obj 118 85 r \$0-vol5;
 #X obj 17 4 r \$0-diseur5;
@@ -3425,50 +3361,48 @@
 #X connect 24 0 16 1;
 #X connect 25 0 3 0;
 #X restore 237 261 pd diseur5;
-#X obj 125 78 s \$0-lang;
-#X msg 125 53 symbol fr;
-#X obj 125 31 loadbang;
+#X obj 125 125 s \$0-lang;
+#X msg 125 100 symbol fr;
+#X obj 125 31 r \$0-maindir;
+#X obj 125 54 b;
+#X obj 125 77 del 1;
 #X connect 11 0 10 0;
 #X connect 12 0 13 0;
 #X connect 14 0 15 0;
 #X connect 26 0 25 0;
-#X connect 27 0 26 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 26 0;
 #X restore 77 268 pd all_stuff;
 #N canvas 9 314 886 372 exemples 0;
 #X msg 8 137 bonjour;
 #X obj 38 69 metro 200;
-#X obj 9 96 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1;
+#X obj 9 96 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 38 112 sel 0 1;
-#X obj 38 52 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
-#X floatatom 95 51 5 50 1000 0 - - -;
+#X obj 38 52 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X floatatom 95 51 5 50 1000 0 - - - 0;
 #X msg 130 137 test;
 #X obj 66 183 s \$0-dire;
 #X obj 423 96 spigot;
-#X obj 460 79 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 460 79 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 66 162 symbol;
-#X obj 197 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
-#X obj 197 177 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 197 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
+#X obj 197 177 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X msg 66 137 histoire;
 #X obj 450 137 t b f;
 #X obj 423 115 i;
 #X obj 450 115 + 1;
-#X floatatom 494 137 5 0 0 0 - - -;
-#X floatatom 559 126 5 0 1000 0 - - -;
+#X floatatom 494 137 5 0 0 0 - - - 0;
+#X floatatom 559 126 5 0 1000 0 - - - 0;
 #X obj 423 161 dire \$0 test 0 0 100;
 #X obj 559 142 * 100;
 #X msg 117 110 machin;
-#X obj 423 79 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
-#X floatatom 550 31 5 0 0 0 - - -;
-#X obj 550 -3 hdl 15 0 1 10 empty empty empty 0 -6 0 8 -262144 -1 -1
-0;
+#X obj 423 79 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
+#X floatatom 550 31 5 0 0 0 - - - 0;
+#X obj 550 -3 hdl 15 0 1 10 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X obj 550 14 unpack;
 #X obj 476 115 mod 9;
-#X symbolatom 5 14 10 0 0 0 - - -;
+#X symbolatom 5 14 10 0 0 0 - - - 0;
 #X obj 5 -10 r \$0-dire;
 #X obj 550 50 s \$0-hum2;
 #X obj 197 39 dire \$0 bonjour 0 -1 1200;
@@ -3476,12 +3410,10 @@
 #X obj 197 132 dire \$0 ciao 0 -1;
 #X msg 112 281 bonjour;
 #X obj 142 218 metro 200;
-#X obj 108 237 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
+#X obj 108 237 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 142 256 sel 0 1;
-#X obj 142 201 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
-#X floatatom 199 200 5 50 1000 0 - - -;
+#X obj 142 201 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X floatatom 199 200 5 50 1000 0 - - - 0;
 #X msg 234 281 test;
 #X obj 170 306 symbol;
 #X msg 170 281 histoire;
@@ -3538,13 +3470,11 @@
 #X connect 46 0 36 0;
 #X connect 47 0 46 1;
 #X restore 76 290 pd exemples;
-#X obj 0 -5 cnv 15 730 190 empty empty Banque_des_sons 250 10 0 16
--228992 -166441 0;
+#X obj 0 -5 cnv 15 730 190 empty empty Banque_des_sons 250 10 0 16 #dce4fc #a0a0a0 0;
 #N canvas 253 0 541 660 mode 0;
 #X obj 67 224 tabread \$0-parole_used;
 #X obj 67 203 +;
-#X obj 67 40 hdl 15 0 0 10 empty empty parole 20 -6 0 10 -262144 -1
--1 0;
+#X obj 67 40 hdl 15 0 0 10 empty empty parole 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 67 79 unpack;
 #X obj 67 99 * 100;
 #X obj 248 352 route 0 1 2 3 4 5 6 7 8 9;
@@ -3599,8 +3529,7 @@
 #X obj 260 128 f;
 #X obj 436 30 r \$0-update_done;
 #X obj 367 51 del 100;
-#X obj 324 39 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 324 39 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 367 70 t b b;
 #X obj 175 525 f;
 #X obj 386 383 subtoggle white --- --- 0 0;
@@ -3749,7 +3678,7 @@
 #X obj 101 21 r \$0-keyname;
 #X msg 101 42 \$2 \$1;
 #X obj 101 63 route Shift_L Shift_R;
-#X floatatom 101 84 1 0 0 0 - - -;
+#X floatatom 101 84 1 0 0 0 - - - 0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -3785,10 +3714,8 @@
 #X connect 23 0 22 0;
 #X connect 23 1 2 0;
 #X restore 52 86 pd get_parole_name;
-#X obj 25 84 cnv 15 300 25 empty \$0-parole_namecnvsrcv nouvelle 2
-12 0 16 -1 -241291 0;
-#X obj 23 12 hdl 15 0 1 10 \$0-lang_radiosnd \$0-lang_radiorcv langue
-20 -6 1728 10 -225271 -1 -1 0;
+#X obj 25 84 cnv 15 300 25 empty \$0-parole_namecnvsrcv nouvelle 2 12 0 16 #000000 #e8e828 0;
+#X obj 23 12 hdl 15 0 1 10 \$0-lang_radiosnd \$0-lang_radiorcv langue 20 -6 0 10 #d8fcd8 #000000 #000000 -1;
 #N canvas 380 290 450 340 get_lang_name 0;
 #X obj 16 112 + 1;
 #X obj 16 92 unpack;
@@ -3803,7 +3730,7 @@
 #X obj 174 170 s \$0-lang_radiorcv;
 #X obj 174 110 slist \$0-langlist;
 #X obj 174 47 r \$0-lang;
-#X floatatom 212 131 5 0 0 0 - - -;
+#X floatatom 212 131 5 0 0 0 - - - 0;
 #X obj 256 264 s \$0-lang_namekey_cnvsrcv;
 #X obj 186 201 slist \$0-lang_keylist;
 #X obj 256 222 makesymbol key:%s;
@@ -3842,33 +3769,24 @@
 #X connect 24 0 23 0;
 #X connect 24 1 22 0;
 #X restore 72 33 pd get_lang_name;
-#X obj 558 55 tgl 15 0 empty \$0-recording recording -20 -6 0 10 -260818
--1 -1 0 1;
-#X obj 472 13 bng 10 250 50 0 \$0-reload_all empty Reload_all 13 7
-0 10 -258699 -258699 -258699;
-#X obj 23 27 cnv 15 200 25 empty \$0-lang_namecnvsrcv fr 10 12 0 16
--2215 -260818 0;
-#X obj 230 27 cnv 15 70 25 empty \$0-lang_namekey_cnvsrcv key:~ 5 12
-0 16 -2215 -260818 0;
-#X obj 344 84 cnv 15 90 25 empty \$0-parole_namekey_cnvsrcv key:a 5
-12 0 16 -1 -241291 0;
-#X obj 472 0 bng 10 250 50 0 \$0-editconfig empty Edit_Config 13 7
-0 10 -24198 -24198 -62784;
+#X obj 558 55 tgl 15 0 empty \$0-recording recording -20 -6 0 10 #fcac44 #000000 #000000 0 1;
+#X obj 472 13 bng 10 250 50 0 \$0-reload_all empty Reload_all 13 7 0 10 #fc2828 #fc2828 #fc2828;
+#X obj 23 27 cnv 15 200 25 empty \$0-lang_namecnvsrcv fr 10 12 0 16 #008898 #fcac44 0;
+#X obj 230 27 cnv 15 70 25 empty \$0-lang_namekey_cnvsrcv key:~ 5 12 0 16 #008898 #fcac44 0;
+#X obj 344 84 cnv 15 90 25 empty \$0-parole_namekey_cnvsrcv key:a 5 12 0 16 #000000 #e8e828 0;
+#X obj 472 0 bng 10 250 50 0 \$0-editconfig empty Edit_Config 13 7 0 10 #14e814 #14e814 #3c50fc;
 #X obj 246 298 s \$0-hum1;
-#X floatatom 327 297 5 0 0 0 - - -;
+#X floatatom 327 297 5 0 0 0 - - - 0;
 #X obj 246 278 r \$0-parole_mode;
 #X obj 341 320 s \$0-parole_num;
 #X msg 379 299 0;
-#X obj 471 25 cnv 15 200 10 empty \$0-info_cnvsrcv ok 2 6 0 10 -233017
--1 0;
+#X obj 471 25 cnv 15 200 10 empty \$0-info_cnvsrcv ok 2 6 0 10 #e0e0e0 #000000 0;
 #N canvas 40 56 542 660 listen 0;
 #X obj 109 275 tabread \$0-parole_used;
 #X obj 109 255 +;
-#X obj 211 36 hdl 15 0 0 10 empty empty parole 20 -6 0 10 -262144 -1
--1 0;
+#X obj 211 36 hdl 15 0 0 10 empty empty parole 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 211 75 unpack;
-#X obj 51 35 hdl 15 0 0 10 empty empty mode 20 -6 0 10 -262144 -1 -1
-0;
+#X obj 51 35 hdl 15 0 0 10 empty empty mode 20 -6 0 10 #fcfcfc #000000 #000000 0;
 #X obj 51 76 unpack;
 #X obj 109 123 +;
 #X obj 211 117 * 100;
@@ -3910,8 +3828,8 @@
 #X obj 51 96 t f f;
 #X obj 315 569 t b f;
 #X obj 378 256 slist \$0-parolelist;
-#X symbolatom 443 339 10 0 0 0 - - -;
-#X floatatom 448 478 5 0 0 0 - - -;
+#X symbolatom 443 339 10 0 0 0 - - - 0;
+#X floatatom 448 478 5 0 0 0 - - - 0;
 #X obj 378 235 + 1;
 #X obj 373 35 r \$0-parole;
 #X obj 373 78 slist \$0-parolelist;
@@ -4028,7 +3946,7 @@
 #X msg 227 314 9;
 #X msg 199 295 8;
 #X obj 171 413 f;
-#X floatatom 448 478 5 0 0 0 - - -;
+#X floatatom 448 478 5 0 0 0 - - - 0;
 #X obj 433 148 sel 0;
 #X obj 488 147 r \$0-update_done;
 #X obj 433 168 del 100;
@@ -4094,8 +4012,7 @@
 #X text 77 125 "AltGr" + "-": EFFACER le dernier son ENTENDU;
 #X text 96 2 Clavier: F8;
 #X restore 391 23 pd help;
-#X obj 2 74 hradio 8 1 0 90 \$0-parole_radiosnd \$0-parole_radiorcv
-paroles 0 -6 0 10 -262144 -1 -1 0;
+#X obj 2 74 hradio 8 1 0 90 \$0-parole_radiosnd \$0-parole_radiorcv paroles 0 -6 0 10 #fcfcfc #000000 #000000 0;
 #X msg 421 284 1;
 #X connect 1 0 0 0;
 #X connect 18 0 16 0;
@@ -4107,15 +4024,14 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #N canvas 394 80 708 511 record 0;
 #X obj 207 318 timer;
 #X obj 542 257 samplerate~;
-#X floatatom 542 280 5 0 0 0 - - -;
+#X floatatom 542 280 5 0 0 0 - - - 0;
 #X obj 542 234 loadbang;
 #X obj 320 448 *;
 #X msg 333 216 20;
 #X obj 333 194 moses 0.01;
 #X obj 207 338 / 1000;
 #X obj 279 293 delay 100;
-#X obj 557 214 bng 15 250 50 0 empty empty empty 20 8 0 8 -262144 -1
--1;
+#X obj 557 214 bng 15 250 50 0 empty empty empty 20 8 0 8 #fcfcfc #000000 #000000;
 #X obj 215 101 sel 1 0;
 #X msg 251 247 stop;
 #X msg 207 33 0;
@@ -4149,19 +4065,17 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 19 83 r \$0-recorder_indel;
 #X obj 336 386 f;
 #X obj 215 76 t f b;
-#X floatatom 434 441 0 0 0 0 - - -;
-#X floatatom 438 407 0 0 0 0 - - -;
-#X floatatom 56 236 0 0 0 0 - - -;
+#X floatatom 434 441 0 0 0 0 - - - 0;
+#X floatatom 438 407 0 0 0 0 - - - 0;
+#X floatatom 56 236 0 0 0 0 - - - 0;
 #X obj 237 203 b;
-#X obj 72 464 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 72 464 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 237 182 del;
 #X obj 19 262 delread~ \$0-indel 200;
 #X obj 380 152 r \$0-recmax;
 #X obj 57 132 loadbang;
 #X obj 57 154 del 5000;
-#X obj 67 205 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
+#X obj 67 205 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 7 0;
 #X connect 0 0 12 0;
 #X connect 1 0 2 0;
@@ -4233,35 +4147,28 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 153 23 inlet~;
 #X obj 166 391 outlet~;
 #X obj 392 10 inlet;
-#X obj 392 32 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
-;
+#X obj 392 32 tgl 15 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000 0 1;
 #X obj 392 52 switch~;
 #X obj 310 267 swav;
-#SUB settings /home/antoine/Datas/Sounds/Recordings/flutios.wav 0 0
-1 0.71;
 #X obj 201 339 +~;
 #X obj 228 394 Out -;
 #X obj 310 380 mull~ 1 400;
 #X obj 415 85 env~;
 #X obj 415 149 sel 0 1;
 #X msg 423 170 stop;
-#X floatatom 428 327 5 0 0 0 - - -;
+#X floatatom 428 327 5 0 0 0 - - - 0;
 #X msg 415 218 0;
 #X msg 446 219 1;
 #X obj 415 130 change -1;
 #X obj 415 241 change -1;
-#X obj 415 261 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
+#X obj 415 261 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 414 279 sel 0 1;
 #X msg 414 300 1;
 #X msg 444 300 0.2;
 #X obj 181 191 subecho;
-#SUB settings 5.89212 0 0;
 #X obj 153 117 subdist;
-#SUB settings -0 1;
 #X obj 428 346 m;
-#X obj 314 163 tgl 20 0 empty empty empty 0 -6 0 8 -24198 -1 -1 0 1
-;
+#X obj 314 163 tgl 20 0 empty empty empty 0 -6 0 8 #14e814 #000000 #000000 0 1;
 #X obj 315 209 sel 0 1;
 #X msg 285 237 stop;
 #X obj 231 121 sig~ 0.5;
@@ -4272,11 +4179,10 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 314 140 &&;
 #X obj 153 73 hip~ 800;
 #X obj 230 369 *~ 0;
-#X obj 256 345 tgl 15 0 empty empty monitor 0 -6 1 10 -262144 -1 -1
-0 1;
+#X obj 256 345 tgl 15 0 empty empty monitor 0 -6 1 10 #fcfcfc #000000 #000000 0 1;
 #X obj 350 129 key;
 #X msg 350 168 0;
-#X floatatom 386 188 5 0 0 0 - - -;
+#X floatatom 386 188 5 0 0 0 - - - 0;
 #X obj 350 149 sel 32;
 #X text 5 1 pour arreter: Espace;
 #X obj 315 188 change -1;
@@ -4331,34 +4237,32 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X connect 41 0 25 0;
 #X connect 42 0 13 0;
 #X restore 105 59 pd jingle;
-#X obj 163 20 tgl 15 0 empty empty empty 0 -6 0 8 -258699 -1 -1 0 1
-;
+#X obj 163 20 tgl 15 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000 0 1;
 #X obj 56 62 != 1;
 #X obj 31 96 *~ 1;
-#X obj 149 111 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
-1;
+#X obj 149 111 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #N canvas 277 71 289 631 seq 0;
 #X obj 19 315 mtof;
 #X obj 19 337 phasor~ 220;
 #X obj 50 375 pow 3;
 #X obj 18 397 mull~ 0 10;
 #X obj 36 51 metro 250;
-#X obj 67 3 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1;
-#X floatatom 120 8 5 0 0 0 - - -;
+#X obj 67 3 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
+#X floatatom 120 8 5 0 0 0 - - - 0;
 #X obj 36 73 i;
 #X obj 68 72 + 1;
 #X obj 67 135 t b b;
 #X obj 35 95 t f f;
 #X obj 67 156 0;
 #X obj 99 157 0;
-#X obj 61 271 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
--1 -1 0 1;
+#X obj 61 271 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 34 432 Out ---;
 #X obj 29 211 tabread \$0-testseq;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-testseq 16 float 3;
-#A 0 1 9.6402 9.6402 8.08016 8.08016 4.36008 4.36008 2.44003 1 1 1
-1 1 1 1 1;
+#A 0 1 9.6402 9.6402 8.08016 8.08016 4.36008 4.36008 2.44003 1 1 1 1 1 1 1 1;
+#A color 0;
+#A width 2;
 #X coords 0 12 15 0 200 100 1;
 #X restore 80 475 graph;
 #X obj 27 241 + 50;
@@ -4369,14 +4273,13 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X msg 201 402 const 1;
 #X obj 178 437 s \$0-testseq;
 #X obj 67 115 sel 7;
-#X floatatom 10 147 5 0 0 0 - - -;
+#X floatatom 10 147 5 0 0 0 - - - 0;
 #X obj 29 184 + 1;
-#X obj 183 133 mknob 25 100 0 128 0 0 empty empty empty -2 -6 0 8 -262144
--1 -1 0 1;
+#X obj 183 133 mknob 25 100 0 128 0 0 empty empty empty -2 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 38 28 t b f;
 #X obj 18 470 outlet~;
 #X obj 178 51 inlet;
-#X floatatom 145 338 5 0 0 0 - - -;
+#X floatatom 145 338 5 0 0 0 - - - 0;
 #X connect 0 0 1 0;
 #X connect 0 0 31 0;
 #X connect 1 0 3 0;
@@ -4412,8 +4315,7 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X connect 28 1 21 1;
 #X connect 30 0 5 0;
 #X restore 200 94 pd seq;
-#X obj 203 62 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 203 62 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 2 0;
 #X connect 0 0 5 0;
 #X connect 2 0 1 0;
@@ -4653,8 +4555,7 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 142 174 t f f;
 #X obj 239 82 biquad~;
 #X obj 107 17 loadbang;
-#X obj 107 1 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 107 1 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 107 39 highshelf 3000 12 100;
 #X obj 119 350 f;
 #X obj 91 350 +;
@@ -4771,7 +4672,7 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 213 304 f;
 #X obj 82 367 *;
 #X msg 31 55 stop;
-#X floatatom 121 456 5 0 0 0 - - -;
+#X floatatom 121 456 5 0 0 0 - - - 0;
 #X obj 135 350 * 0.9;
 #X obj 203 94 s \$0-recmax;
 #X obj 60 77 delay 700;
@@ -4829,8 +4730,7 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X connect 39 0 21 0;
 #X restore 1 1 pd parole_autorec;
 #N canvas 19 138 600 400 playtab 0;
-#X obj 187 215 bng 15 250 50 0 empty empty empty 20 8 0 8 -24198 -1
--1;
+#X obj 187 215 bng 15 250 50 0 empty empty empty 20 8 0 8 #14e814 #000000 #000000;
 #X msg 143 214 stop;
 #X obj 124 118 subtoggle green 1 0;
 #X obj 288 109 r \$0-insamplength;
@@ -4901,13 +4801,11 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X connect 15 0 5 0;
 #X connect 16 0 5 0;
 #X restore 129 54 pd protect;
-#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
--241291 -1 -1 0 1;
+#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #N canvas 282 85 648 658 player 0;
 #X obj 158 123 dire \$0 nouvelle 0 -1 500;
 #X obj -5 48 s \$0-playnote;
-#X obj 93 46 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 93 46 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 158 48 b;
 #X obj 158 167 s \$0-meloplay;
 #X obj 148 232 r \$0-melofin;
@@ -4927,8 +4825,8 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 0 439 dire \$0 reussi 0 -1 500;
 #X obj 107 260 i;
 #X obj 337 340 s \$0-buzz;
-#X floatatom 429 612 5 0 0 0 - - -;
-#X floatatom 44 317 5 0 0 0 - - -;
+#X floatatom 429 612 5 0 0 0 - - - 0;
+#X floatatom 44 317 5 0 0 0 - - - 0;
 #X obj 107 281 t f f;
 #X obj 107 377 +;
 #X obj 107 355 1;
@@ -4993,8 +4891,8 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X obj 417 159 b;
 #X obj 417 219 s \$0-bdemux;
 #X msg 417 199 0;
-#X floatatom 142 503 5 0 0 0 - - -;
-#X floatatom 89 128 5 0 0 0 - - -;
+#X floatatom 142 503 5 0 0 0 - - - 0;
+#X floatatom 89 128 5 0 0 0 - - - 0;
 #X obj 284 179 r \$0-nouvelle;
 #X obj 284 202 s \$0-newsound;
 #X obj 0 518 moses 5;
@@ -5085,11 +4983,10 @@ paroles 0 -6 0 10 -262144 -1 -1 0;
 #X restore 213 56 pd player;
 #X obj 130 215 s \$0-latency;
 #X obj 130 196 init 20;
-#X obj 51 115 mknob 25 100 0 1 0 1 \$0-melovol-snd \$0-melovol-rcv
-melovol -2 -6 1 10 -250685 -1 -1 3400 1;
+#X obj 51 115 mknob 25 100 0 1 0 1 \$0-melovol-snd \$0-melovol-rcv melovol -2 -6 1 10 #f430f0 #000000 #000000 3400 1;
 #N canvas 811 82 434 232 mode 0;
 #X obj 123 205 s \$0-hum1;
-#X floatatom 123 179 5 0 0 0 - - -;
+#X floatatom 123 179 5 0 0 0 - - - 0;
 #X obj 14 11 r \$0-s-snd;
 #X obj 89 9 r \$0-st-snd;
 #X obj 14 42 b;
@@ -5098,9 +4995,8 @@ melovol -2 -6 1 10 -250685 -1 -1 3400 1;
 #X obj 16 67 del 50000;
 #X obj 332 43 r \$0-nbmodes;
 #X obj 113 33 r \$0-nouvelle;
-#X obj 97 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X floatatom 199 86 5 0 0 0 - - -;
+#X obj 97 68 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 199 86 5 0 0 0 - - - 0;
 #X msg 77 124 2;
 #X msg 109 124 4;
 #X msg 141 123 5;
@@ -5127,23 +5023,16 @@ melovol -2 -6 1 10 -250685 -1 -1 3400 1;
 #X connect 17 0 16 0;
 #X connect 18 0 1 0;
 #X restore 129 74 pd mode;
-#X obj 130 129 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 130 129 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #N canvas 0 0 283 124 unused 0;
 #X obj 11 33 apmaster \$0;
-#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
-;
-#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
--1;
-#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
-10.11.12.13.14.15.16 122 -6 1 6 -258699 -1 -262144;
-#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
-_1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
-0;
+#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 #14e814 #000000 #000000;
+#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000;
+#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv 10.11.12.13.14.15.16 122 -6 1 6 #fc2828 #000000 #fcfcfc;
+#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 #fcfcfc #000000 #000000 0;
 #N canvas 628 101 443 334 file_patt_but 0;
 #X msg 27 31 \$1;
-#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 203 67 sel 0 1;
 #X msg 203 88 color 0 22 22;
 #X msg 226 112 color 13 22 22;
@@ -5156,7 +5045,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X msg 20 165 _apfile_ load \$1;
 #X msg 148 165 _apfile_ store \$1;
 #X obj 203 138 s \$0-file_patt_but-rcv;
-#X symbolatom 237 306 0 0 0 0 - - -;
+#X symbolatom 237 306 0 0 0 0 - - - 0;
 #X obj 249 286 s \$0-apmaster-rcv;
 #X msg 249 266 loadin;
 #X obj 237 202 r \$0-_apfile_-snd;
@@ -5188,18 +5077,15 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 2 0 0 1;
 #X restore 13 254 pd unused;
 #X obj 130 174 s \$0-nbmodes;
-#X obj 51 152 mknob 25 100 0 1 0 1 \$0-buzzvol-snd \$0-buzzvol-rcv
-buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
-#X obj 81 157 bng 15 250 50 0 \$0-buzz empty empty 0 -6 0 8 -241291
--1 -1;
+#X obj 51 152 mknob 25 100 0 1 0 1 \$0-buzzvol-snd \$0-buzzvol-rcv buzzvol -2 -6 1 10 #e8e828 #000000 #000000 3400 1;
+#X obj 81 157 bng 15 250 50 0 \$0-buzz empty empty 0 -6 0 8 #e8e828 #000000 #000000;
 #N canvas 1040 272 293 173 buzz 0;
 #X obj 11 10 osc~ 50;
 #X obj 12 122 *~;
 #X obj 76 99 del 800;
 #X obj 76 77 t b b;
 #X obj 76 119 0;
-#X obj 122 80 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 122 80 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 102 119 0.5;
 #X obj 76 56 r \$0-buzz;
 #X obj 133 118 r \$0-buzzvol-snd;
@@ -5232,7 +5118,6 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 259 108 random 10;
 #X obj 259 52 b;
 #X obj 64 312 subdelay;
-#SUB settings 3.153 0.460001;
 #X obj 50 384 throw~ \$0-out;
 #X obj 50 363 *~;
 #X obj 79 363 r \$0-melovol-snd;
@@ -5244,8 +5129,7 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 150 288 *~;
 #X obj 166 246 +~ 0;
 #X obj 49 133 t f b;
-#X obj 89 156 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 89 156 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 49 154 demux;
 #X obj 150 182 t b f;
 #X obj 295 271 osc~ 6;
@@ -5265,8 +5149,7 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 75 53 74;
 #X obj 102 53 76;
 #X obj 31 8 r \$0-playnote;
-#X obj 233 31 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 322 44 r \$0-newsound;
 #X obj 122 108 r \$0-meloplaytime;
 #X obj 49 203 ead~ 20 1200;
@@ -5274,7 +5157,7 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 122 130 * 2.5;
 #X obj 327 151 * 10;
 #X obj 59 112 ++;
-#X floatatom 113 83 5 0 0 0 - - -;
+#X floatatom 113 83 5 0 0 0 - - - 0;
 #X connect 0 0 2 1;
 #X connect 1 0 5 1;
 #X connect 2 0 9 0;
@@ -5351,11 +5234,10 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 18 29 b;
 #X obj 18 6 r \$0-meloplay;
 #X obj 18 183 s \$0-playnote;
-#X obj 44 31 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 44 31 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 17 370 + 1;
 #X msg 17 248 0;
-#X floatatom 64 311 5 0 0 0 - - -;
+#X floatatom 64 311 5 0 0 0 - - - 0;
 #X obj 17 291 t f f;
 #X obj 104 75 r \$0-meloplaytime;
 #X obj 108 269 r \$0-melolen;
@@ -5407,7 +5289,7 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X msg 107 167 5 400 2000;
 #X msg 196 168 6 300 2000;
 #X msg 292 167 8 200 2000;
-#X floatatom 260 64 5 0 0 0 - - -;
+#X floatatom 260 64 5 0 0 0 - - - 0;
 #X obj 125 79 sel 0 1 2 3 4 5 6;
 #X msg 376 168 12 180 2000;
 #X connect 2 0 5 0;
@@ -5438,13 +5320,11 @@ buzzvol -2 -6 1 10 -241291 -1 -1 3400 1;
 #X obj 279 123 r ClochesMode;
 #X msg 279 186 1;
 #X msg 308 186 0;
-#X obj 279 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 279 209 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 279 228 s \$0-onoff;
 #X obj 279 144 route Repie;
 #X obj 279 165 route Classic;
-#X obj 14 180 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
--1 -1 0 1;
+#X obj 14 180 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 #fc2828 #000000 #000000 0 1;
 #X obj 14 207 r \$0-onoff;
 #X obj 14 230 switch~;
 #X connect 10 0 9 0;
