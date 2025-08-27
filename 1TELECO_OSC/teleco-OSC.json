@@ -1,5 +1,8 @@
 {
-  "session": {
+  "version": "1.25.5",
+  "type": "session",
+  "createdWith": "Open Stage Control",
+  "content": {
     "type": "root",
     "id": "root",
     "linkId": "",
@@ -31,7 +34,6 @@
         "contain": true,
         "scroll": true,
         "innerPadding": true,
-        "verticalTabs": false,
         "label": "Cloches",
         "variables": "@{parent.variables}",
         "traversing": false,
@@ -45,7 +47,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "matrix",
@@ -79,7 +80,6 @@
             "traversing": false,
             "widgetType": "button",
             "quantity": 5,
-            "start": 1,
             "props": {},
             "value": "",
             "default": "",
@@ -91,9 +91,14 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "widgets": [],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "matrix",
@@ -127,7 +132,6 @@
             "traversing": false,
             "widgetType": "button",
             "quantity": 4,
-            "start": 1,
             "props": {},
             "value": "",
             "default": "",
@@ -139,9 +143,14 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "widgets": [],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "matrix",
@@ -175,7 +184,6 @@
             "traversing": false,
             "widgetType": "button",
             "quantity": 6,
-            "start": 0,
             "props": {},
             "value": "",
             "default": "",
@@ -187,9 +195,14 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "widgets": [],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "matrix",
@@ -223,7 +236,6 @@
             "traversing": false,
             "widgetType": "button",
             "quantity": 9,
-            "start": 0,
             "props": {},
             "value": "",
             "default": "",
@@ -235,9 +247,14 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "widgets": [],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "switch",
@@ -247,7 +264,7 @@
             "visible": true,
             "interaction": true,
             "width": 100,
-            "height": 120,
+            "height": 130,
             "expand": "false",
             "colorText": "auto",
             "colorWidget": "auto",
@@ -266,7 +283,8 @@
             "values": {
               "Sylla combat": "Combat",
               "Sylla basse": "Basse",
-              "Sylla orgue": "Orgue"
+              "Sylla orgue": "Orgue",
+              "Sylla amour": "Amour"
             },
             "mode": "tap",
             "value": "",
@@ -279,7 +297,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "wrap": false,
+            "onCreate": ""
           },
           {
             "type": "switch",
@@ -288,7 +311,7 @@
             "id": "switch_repie",
             "visible": true,
             "interaction": true,
-            "width": 100,
+            "width": 90,
             "height": 150,
             "expand": "false",
             "colorText": "auto",
@@ -309,7 +332,8 @@
               "Répié classic": "Classic",
               "Répié baroque": "Baroque",
               "Répié drum": "Drum",
-              "Répié orgue": "Orgue"
+              "Répié orgue": "Orgue",
+              "Répié amour": "Amour"
             },
             "mode": "tap",
             "value": "",
@@ -322,7 +346,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "wrap": false,
+            "onCreate": ""
           },
           {
             "type": "led",
@@ -361,7 +390,10 @@
             "address": "auto",
             "preArgs": "",
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "onCreate": ""
           },
           {
             "type": "led",
@@ -400,7 +432,10 @@
             "address": "auto",
             "preArgs": "",
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "onCreate": ""
           },
           {
             "type": "led",
@@ -439,7 +474,10 @@
             "address": "auto",
             "preArgs": "",
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "onCreate": ""
           },
           {
             "type": "led",
@@ -478,17 +516,20 @@
             "address": "auto",
             "preArgs": "",
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "onCreate": ""
           },
           {
             "type": "button",
-            "top": 140,
-            "left": 230,
+            "top": 200,
+            "left": 290,
             "id": "MyoToRoto",
             "visible": true,
             "interaction": true,
-            "width": "auto",
-            "height": "auto",
+            "width": 80,
+            "height": 50,
             "expand": "false",
             "colorText": "auto",
             "colorWidget": "auto",
@@ -519,13 +560,65 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "switch",
             "top": 200,
             "left": 160,
             "id": "switch_myo",
+            "visible": true,
+            "interaction": true,
+            "width": 120,
+            "height": 130,
+            "expand": "false",
+            "colorText": "auto",
+            "colorWidget": "auto",
+            "colorStroke": "auto",
+            "colorFill": "auto",
+            "alphaStroke": "auto",
+            "alphaFillOff": "auto",
+            "alphaFillOn": "auto",
+            "lineWidth": "auto",
+            "padding": "auto",
+            "html": "",
+            "css": "",
+            "colorTextOn": "auto",
+            "layout": "vertical",
+            "gridTemplate": "",
+            "values": {
+              "Myosotis baroque": "Baroque",
+              "Myosotis nappe": "Nappe",
+              "Myosotis amour": "Amour"
+            },
+            "mode": "tap",
+            "value": "",
+            "default": "",
+            "linkId": "",
+            "address": "auto",
+            "preArgs": "",
+            "typeTags": "",
+            "decimals": 2,
+            "target": "",
+            "ignoreDefaults": false,
+            "bypass": false,
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "wrap": false,
+            "onCreate": ""
+          },
+          {
+            "type": "switch",
+            "top": 0,
+            "left": 220,
+            "id": "switch_roto",
             "visible": true,
             "interaction": true,
             "width": 120,
@@ -546,8 +639,8 @@
             "layout": "vertical",
             "gridTemplate": "",
             "values": {
-              "Myosotis baroque": "Baroque",
-              "Myosotis nappe": "Nappe"
+              "Roto sampleur": "Sampleur",
+              "Roto amour": "Amour"
             },
             "mode": "tap",
             "value": "",
@@ -560,17 +653,22 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "wrap": false,
+            "onCreate": ""
           },
           {
             "type": "button",
-            "top": 510,
-            "left": 270,
+            "top": 480,
+            "left": 240,
             "id": "AutoGamme",
             "visible": true,
             "interaction": true,
             "width": "auto",
-            "height": "auto",
+            "height": 50,
             "expand": "false",
             "colorText": "auto",
             "colorWidget": "rgba(136,151,208,1)",
@@ -601,17 +699,68 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
-            "top": 20,
-            "left": 260,
+            "top": 530,
+            "left": 240,
+            "id": "Monitor12",
+            "visible": true,
+            "interaction": true,
+            "width": 80,
+            "height": 50,
+            "expand": "false",
+            "colorText": "auto",
+            "colorWidget": "#5bfc37",
+            "colorStroke": "auto",
+            "colorFill": "auto",
+            "alphaStroke": "auto",
+            "alphaFillOff": "auto",
+            "alphaFillOn": "auto",
+            "lineWidth": "auto",
+            "padding": "auto",
+            "html": "",
+            "css": "",
+            "colorTextOn": "auto",
+            "label": "auto",
+            "vertical": false,
+            "wrap": false,
+            "on": 1,
+            "off": 0,
+            "mode": "toggle",
+            "doubleTap": false,
+            "value": "",
+            "default": "",
+            "linkId": "",
+            "address": "auto",
+            "preArgs": "",
+            "typeTags": "",
+            "decimals": 2,
+            "target": "",
+            "ignoreDefaults": false,
+            "bypass": false,
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
+          },
+          {
+            "type": "button",
+            "top": 480,
+            "left": 330,
             "id": "Refresh",
             "visible": true,
             "interaction": true,
-            "width": 70,
-            "height": 60,
+            "width": 50,
+            "height": 50,
             "expand": "false",
             "colorText": "auto",
             "colorWidget": "rgba(241,233,61,1)",
@@ -642,10 +791,21 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "comments": "",
+        "borderRadius": "auto",
+        "tabsPosition": "top",
+        "onCreate": ""
       },
       {
         "type": "tab",
@@ -665,7 +825,6 @@
         "contain": true,
         "scroll": true,
         "innerPadding": true,
-        "verticalTabs": false,
         "label": "auto",
         "variables": "@{parent.variables}",
         "traversing": false,
@@ -679,7 +838,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [],
         "tabs": [
           {
@@ -735,7 +893,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -776,7 +939,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "text",
@@ -808,7 +976,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -849,7 +1021,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -890,7 +1067,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "panel",
@@ -920,7 +1102,6 @@
                 "contain": true,
                 "scroll": false,
                 "innerPadding": false,
-                "verticalTabs": false,
                 "variables": "@{parent.variables}",
                 "traversing": false,
                 "value": "",
@@ -933,7 +1114,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "fader",
@@ -983,7 +1163,12 @@
                     "gradient": [],
                     "typeTags": "",
                     "ignoreDefaults": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "text",
@@ -1015,10 +1200,20 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "clone",
@@ -1035,7 +1230,8 @@
                 "props": {
                   "id": "fader1"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1054,7 +1250,8 @@
                 "props": {
                   "id": "fader2"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1073,7 +1270,8 @@
                 "props": {
                   "id": "fader3"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1105,7 +1303,6 @@
                 "contain": true,
                 "scroll": true,
                 "innerPadding": true,
-                "verticalTabs": false,
                 "variables": "@{parent.variables}",
                 "traversing": false,
                 "value": "",
@@ -1118,7 +1315,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "matrix",
@@ -1151,7 +1347,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "colorBg": "auto",
                     "layout": "vertical",
                     "justify": "start",
@@ -1163,7 +1358,6 @@
                     "traversing": false,
                     "widgetType": "button",
                     "quantity": 8,
-                    "start": 0,
                     "props": {
                       "script": "if(value == 1) set('@{parent.id}/val', #{$})",
                       "id": "@{this.id}_#{$}",
@@ -1172,7 +1366,13 @@
                       "label": "OSC{text , @{this.id}}"
                     },
                     "widgets": [],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   },
                   {
                     "type": "variable",
@@ -1187,7 +1387,10 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "set('@{parent.id}'+'_b_*',0)\nif(get('@{parent.id}'+'_b_'+value) != 1) set('@{parent.id}'+'_b_'+value,1)\nsend('/@{parent.id}/val', value)"
+                    "onValue": "set('@{parent.id}'+'_b_*',0)\nif(get('@{parent.id}'+'_b_'+value) != 1) set('@{parent.id}'+'_b_'+value,1)\nsend('/@{parent.id}/val', value)",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "variable",
@@ -1202,10 +1405,19 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "updateProp( \"@{parent.id}_b_2\", \"visible\")"
+                    "onValue": "updateProp( \"@{parent.id}_b_2\", \"visible\")",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "clone",
@@ -1222,7 +1434,8 @@
                 "props": {
                   "id": "radio1"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1241,7 +1454,8 @@
                 "props": {
                   "id": "fader4"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1273,7 +1487,6 @@
                 "contain": true,
                 "scroll": true,
                 "innerPadding": true,
-                "verticalTabs": false,
                 "variables": "@{parent.variables}",
                 "traversing": false,
                 "value": "",
@@ -1286,7 +1499,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "matrix",
@@ -1319,7 +1531,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "colorBg": "auto",
                     "layout": "vertical",
                     "justify": "start",
@@ -1331,7 +1542,6 @@
                     "traversing": false,
                     "widgetType": "clone",
                     "quantity": 8,
-                    "start": 0,
                     "props": {
                       "widgetId": "template_radio_button",
                       "expand": true,
@@ -1343,7 +1553,13 @@
                       }
                     },
                     "widgets": [],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   },
                   {
                     "type": "variable",
@@ -1358,7 +1574,10 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "set('@{parent.id}'+'_b_*',0)\nif(get('@{parent.id}'+'_b_'+value) != 1) set('@{parent.id}'+'_b_'+value,1)\nsend('/@{parent.id}/val', value)"
+                    "onValue": "set('@{parent.id}'+'_b_*',0)\nif(get('@{parent.id}'+'_b_'+value) != 1) set('@{parent.id}'+'_b_'+value,1)\nsend('/@{parent.id}/val', value)",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "variable",
@@ -1373,10 +1592,19 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -1417,7 +1645,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": true,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "panel",
@@ -1447,7 +1680,6 @@
                 "contain": true,
                 "scroll": false,
                 "innerPadding": false,
-                "verticalTabs": false,
                 "variables": "@{parent.variables}",
                 "traversing": false,
                 "value": "",
@@ -1460,7 +1692,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "variable",
@@ -1475,7 +1706,10 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "set('@{parent.id}'+'_b*',0)\nif(get('@{parent.id}'+'_b'+value) != 1) set('@{parent.id}'+'_b'+value,1)\nsend('/@{parent.id}/val', value)"
+                    "onValue": "set('@{parent.id}'+'_b*',0)\nif(get('@{parent.id}'+'_b'+value) != 1) set('@{parent.id}'+'_b'+value,1)\nsend('/@{parent.id}/val', value)",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "variable",
@@ -1490,7 +1724,10 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "clone",
@@ -1509,7 +1746,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 0)",
                       "visible": "#{@{@{parent.id}/n} > 0}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1530,7 +1768,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 1)",
                       "visible": "#{@{@{parent.id}/n} > 1}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1551,7 +1790,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 2)",
                       "visible": "#{@{@{parent.id}/n} > 2}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1572,7 +1812,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 3)",
                       "visible": "#{@{@{parent.id}/n} > 3}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1593,7 +1834,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 4)",
                       "visible": "#{@{@{parent.id}/n} > 4}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1614,7 +1856,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 5)",
                       "visible": "#{@{@{parent.id}/n} > 5}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1635,7 +1878,8 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 6)",
                       "visible": "#{@{@{parent.id}/n} > 6}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1656,12 +1900,19 @@
                       "script": "if(value == 1) set('@{parent.id}/val', 7)",
                       "visible": "#{@{@{parent.id}/n} > 7}"
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "clone",
@@ -1678,7 +1929,8 @@
                 "props": {
                   "id": "radio2"
                 },
-                "script": "",
+                "lock": false,
+                "comments": "",
                 "address": "auto",
                 "variables": "@{parent.variables}"
               },
@@ -1712,7 +1964,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "fader",
@@ -1762,7 +2018,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "text",
@@ -1794,7 +2055,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               }
             ],
             "tabs": [],
@@ -1813,11 +2078,15 @@
             "justify": "start",
             "gridTemplate": "",
             "contain": true,
-            "verticalTabs": false,
             "traversing": false,
             "typeTags": "",
             "ignoreDefaults": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "tab",
@@ -1843,7 +2112,6 @@
                 "height": 450,
                 "css": "",
                 "widgetType": "text",
-                "start": 1,
                 "traversing": true,
                 "props": "{\n  \"html\": #{$},\n  \"alphaFillOff\": \"#{Math.max(@{battsvar_#{$}}, 0.4)}\",\n  \"colorFill\": \"#{@{battsvar_#{$}} > -49.9 ? 'blue' : 'red'}\",\n  \"script\": \"set('battsvar_#{$}', 1)\"\n}",
                 "default": "",
@@ -1877,9 +2145,14 @@
                 "variables": "@{parent.variables}",
                 "typeTags": "",
                 "ignoreDefaults": false,
-                "script": "",
                 "widgets": [],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "matrix",
@@ -1913,7 +2186,6 @@
                 "traversing": false,
                 "widgetType": "variable",
                 "quantity": 30,
-                "start": 1,
                 "props": {
                   "id": "battsvar_#{$}",
                   "script": "var fallTime = 0.2, fps = 8, maxValue = 1, step = maxValue / fps / fallTime; setTimeout(()=>{if (value <= -50) clearTimeout(); else set('this', value - step)}, 1000 / fps)"
@@ -1928,9 +2200,14 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "variable",
@@ -1945,7 +2222,10 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "var fallTime = 0.2,\n    fps = 24,\n    maxValue = 1,\n    step = maxValue / fps / fallTime\n\nsetTimeout(()=>{\n  if (value <= 0.2) clearTimeout()\n  else set(\"this\", value - step)\n}, 1000 / fps)"
+                "onValue": "var fallTime = 0.2,\n    fps = 24,\n    maxValue = 1,\n    step = maxValue / fps / fallTime\n\nsetTimeout(()=>{\n  if (value <= 0.2) clearTimeout()\n  else set(\"this\", value - step)\n}, 1000 / fps)",
+                "lock": false,
+                "comments": "",
+                "onCreate": ""
               },
               {
                 "type": "text",
@@ -1977,7 +2257,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": "set(\"variable_1\", 1)"
+                "onValue": "set(\"variable_1\", 1)",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "variable",
@@ -1992,7 +2276,10 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "var fallTime = 0.2, fps = 8, maxValue = 1\nvar step = maxValue / fps / fallTime\nsetTimeout(()=>{\n  if (value <= -20) clearTimeout()\n  else set('this', value - step)\n}, 1000 / fps)"
+                "onValue": "var fallTime = 0.2, fps = 8, maxValue = 1\nvar step = maxValue / fps / fallTime\nsetTimeout(()=>{\n  if (value <= -20) clearTimeout()\n  else set('this', value - step)\n}, 1000 / fps)",
+                "lock": false,
+                "comments": "",
+                "onCreate": ""
               }
             ],
             "tabs": [],
@@ -2011,11 +2298,15 @@
             "justify": "start",
             "gridTemplate": "",
             "contain": true,
-            "verticalTabs": false,
             "traversing": false,
             "typeTags": "",
             "ignoreDefaults": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "tab",
@@ -2035,7 +2326,6 @@
             "contain": true,
             "scroll": true,
             "innerPadding": true,
-            "verticalTabs": false,
             "label": "auto",
             "variables": "@{parent.variables}",
             "traversing": false,
@@ -2049,7 +2339,6 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "widgets": [
               {
                 "type": "fader",
@@ -2099,7 +2388,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "text",
@@ -2131,7 +2425,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "text",
@@ -2163,7 +2461,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "fader",
@@ -2213,7 +2515,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "text",
@@ -2245,7 +2552,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "fader",
@@ -2295,7 +2606,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "text",
@@ -2327,7 +2643,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "fader",
@@ -2377,7 +2697,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "modal",
@@ -2404,7 +2729,6 @@
                 "alphaFillOn": "auto",
                 "lineWidth": "auto",
                 "padding": "auto",
-                "html": "",
                 "css": "font-size:120%",
                 "colorBg": "auto",
                 "layout": "default",
@@ -2429,7 +2753,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "text",
@@ -2461,7 +2784,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -2502,7 +2829,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -2543,10 +2875,21 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "set('modal_shutdown', 0)"
+                    "onValue": "set('modal_shutdown', 0)",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "modal",
@@ -2573,7 +2916,6 @@
                 "alphaFillOn": "auto",
                 "lineWidth": "auto",
                 "padding": "auto",
-                "html": "",
                 "css": "",
                 "colorBg": "auto",
                 "layout": "default",
@@ -2598,7 +2940,6 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "widgets": [
                   {
                     "type": "text",
@@ -2630,7 +2971,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "modal",
@@ -2657,7 +3002,6 @@
                     "alphaFillOn": "auto",
                     "lineWidth": "auto",
                     "padding": "auto",
-                    "html": "",
                     "css": "font-size:150%",
                     "colorBg": "auto",
                     "layout": "default",
@@ -2682,7 +3026,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "widgets": [
                       {
                         "type": "button",
@@ -2723,10 +3066,21 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": "set('editCigaleShutdown', 0)"
+                        "onValue": "set('editCigaleShutdown', 0)",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       }
                     ],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   },
                   {
                     "type": "text",
@@ -2758,7 +3112,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "fader",
@@ -2808,7 +3166,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "text",
@@ -2840,7 +3203,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "fader",
@@ -2890,7 +3257,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "fader",
@@ -2940,7 +3312,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "text",
@@ -2972,7 +3349,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "fader",
@@ -3022,7 +3403,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "text",
@@ -3054,7 +3440,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "fader",
@@ -3104,7 +3494,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "text",
@@ -3136,7 +3531,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -3177,10 +3576,21 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "switch",
@@ -3250,7 +3660,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "wrap": false,
+                "onCreate": ""
               },
               {
                 "type": "text",
@@ -3282,7 +3697,11 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "fader",
@@ -3332,7 +3751,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": "",
+                "onTouch": ""
               },
               {
                 "type": "text",
@@ -3364,12 +3788,28 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               }
             ],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           }
-        ]
+        ],
+        "onValue": "",
+        "lock": false,
+        "comments": "",
+        "borderRadius": "auto",
+        "tabsPosition": "top",
+        "onCreate": ""
       },
       {
         "type": "tab",
@@ -3389,7 +3829,6 @@
         "contain": true,
         "scroll": true,
         "innerPadding": true,
-        "verticalTabs": false,
         "label": "Settings",
         "variables": "@{parent.variables}",
         "traversing": false,
@@ -3403,7 +3842,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "dropdown",
@@ -3456,10 +3894,14 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "label": "auto",
             "icon": "true",
-            "align": "center"
+            "align": "center",
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "fader",
@@ -3509,10 +3951,21 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": "",
+            "onTouch": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "comments": "",
+        "borderRadius": "auto",
+        "tabsPosition": "top",
+        "onCreate": ""
       }
     ],
     "scroll": true,
@@ -3532,12 +3985,15 @@
     "gridTemplate": "",
     "contain": true,
     "innerPadding": true,
-    "verticalTabs": false,
     "typeTags": "",
     "ignoreDefaults": false,
-    "script": "",
-    "widgets": []
-  },
-  "version": "1.8.15",
-  "type": "Open Stage Control session"
+    "widgets": [],
+    "onValue": "",
+    "lock": false,
+    "comments": "",
+    "borderRadius": "auto",
+    "tabsPosition": "top",
+    "hideMenu": false,
+    "onCreate": ""
+  }
 }

@@ -1,0 +1,10 @@
+#N canvas 205 373 450 300 12;
+#X obj 204 26 r \$1-freetables;
+#X msg 204 51 resize 1;
+#X obj 15 25 table \$2-wavtableL-\$1 1;
+#X obj 15 49 table \$2-wavtableR-\$1 1;
+#X obj 204 76 s \$2-wavtableL-\$1;
+#X obj 188 108 s \$2-wavtableR-\$1;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;

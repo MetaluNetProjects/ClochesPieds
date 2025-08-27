@@ -1,16 +1,15 @@
-#N canvas 2308 663 815 647 10;
+#N canvas 2298 365 815 647 10;
 #X declare -lib zexy;
 #X declare -path iemlib -lib iemlib -lib iemlib1;
 #X declare -path abs;
 #X declare -path moonlib -path ggee -path motex -path hcs;
 #X declare -path domoTools;
-#X obj 8 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 23 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 38 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 54 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
+#X obj 8 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 23 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 38 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 54 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
 #X msg 270 90 \; pd dsp \$1;
-#X obj 238 91 tgl 30 0 empty empty empty 0 -6 0 8 -24198 -258699 -1
-1 1;
+#X obj 238 91 tgl 30 0 empty empty empty 0 -6 0 8 #14e814 #fc2828 #000000 0 1;
 #X obj 238 33 loadbang;
 #X obj 238 52 del 2000;
 #X msg 238 72 1;
@@ -44,10 +43,10 @@
 #X obj 32 53 adc~ 1;
 #X obj 88 100 hip~ 5000;
 #X obj 32 5 r INPUT_SET_CHAN;
-#X floatatom 145 288 5 0 0 0 - - -;
+#X floatatom 145 288 5 0 0 0 - - - 0;
 #X obj 190 353 s INPUT_VU;
 #X msg 32 28 set \$1;
-#X floatatom 145 318 5 0 0 0 - - -;
+#X floatatom 145 318 5 0 0 0 - - - 0;
 #X obj 190 239 change;
 #X obj 190 211 max 0;
 #X obj 190 187 + 60;
@@ -80,14 +79,13 @@
 #X connect 26 0 27 0;
 #X connect 27 0 19 0;
 #X restore 187 9 pd in;
-#X obj 188 33 vu 15 80 empty empty -1 -8 0 8 -66577 -1 0 0;
+#X obj 188 33 vu 15 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
 #X obj 8 252 s \$0-clock;
 #X obj 20 206 r \$0-pdnet-fromserver;
 #X obj 83 253 s Gammes;
 #X obj 85 272 s Gammestab;
 #X obj 83 293 table Gammestab;
-#X obj 59 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 59 277 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 8 186 r \$0-fromserver;
 #N canvas 340 139 813 383 master 0;
 #X obj 23 218 prvu~;
@@ -142,8 +140,7 @@
 #X connect 10 0 4 0;
 #X connect 11 0 7 0;
 #X restore 41 88 pd clean_limit;
-#X obj 134 65 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
+#X obj 134 65 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #N canvas 242 97 450 300 clean_limit 0;
 #X obj 39 44 inlet~;
 #X obj 39 156 outlet~;
@@ -169,8 +166,7 @@
 #X connect 10 0 4 0;
 #X connect 11 0 7 0;
 #X restore 186 89 pd clean_limit;
-#X obj 279 66 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
+#X obj 279 66 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #X obj 54 359 catch~ rev1;
 #X obj 390 218 prvu~;
 #X obj 390 238 unpack 0 0 0;
@@ -219,8 +215,7 @@
 #X connect 10 0 4 0;
 #X connect 11 0 7 0;
 #X restore 408 88 pd clean_limit;
-#X obj 501 65 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
+#X obj 501 65 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #N canvas 242 97 450 300 clean_limit 0;
 #X obj 39 44 inlet~;
 #X obj 39 156 outlet~;
@@ -246,8 +241,7 @@
 #X connect 10 0 4 0;
 #X connect 11 0 7 0;
 #X restore 553 89 pd clean_limit;
-#X obj 646 66 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
-;
+#X obj 646 66 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
 #X obj 387 13 catch~ outl3;
 #X obj 470 14 catch~ outr3;
 #X obj 554 14 catch~ outl4;
@@ -414,19 +408,17 @@
 #X connect 66 0 56 0;
 #X connect 66 1 56 1;
 #X restore 7 7 pd master ---------;
-#X obj 70 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 85 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 101 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
-#X obj 117 29 vu 10 80 empty empty -1 -8 0 8 -66577 -1 0 0;
+#X obj 70 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 85 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 101 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
+#X obj 117 29 vu 10 80 empty empty -1 -8 0 8 #404040 #000000 0 0;
 #X obj 9 121 netreceive 8002 0 old;
 #X obj 7 331 ClochesPieds \$0;
-#X obj 207 33 vsl 15 80 0.1 50 1 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3808 1;
+#X obj 207 33 vsl 15 80 0.1 50 1 1 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 3808 1;
 #X msg 224 8 1;
-#X floatatom 192 118 5 0 0 0 - - -;
-#X obj 132 28 vsl 15 80 0 1.2 0 1 \$0-mastervol-snd \$0-mastervol-rcv
-master 0 -9 0 10 -258113 -1 -1 6583 1;
-#X floatatom 145 115 5 0 0 0 - - -;
+#X floatatom 192 118 5 0 0 0 - - - 0;
+#X obj 132 28 vsl 15 80 0 1.2 0 1 \$0-mastervol-snd \$0-mastervol-rcv master 0 -9 0 10 #fc0400 #000000 #000000 6583 1;
+#X floatatom 145 115 5 0 0 0 - - - 0;
 #X msg 152 32 1;
 #X obj 8 229 route clock Gammes standby;
 #X obj 159 251 == 0;
@@ -434,8 +426,7 @@ master 0 -9 0 10 -258113 -1 -1 6583 1;
 #X obj 33 17 declare -lib zexy;
 #X obj 33 38 declare -path iemlib -lib iemlib -lib iemlib1;
 #X obj 34 79 declare -path abs;
-#X obj 34 59 declare -path moonlib -path ggee -path motex -path hcs
-;
+#X obj 34 59 declare -path moonlib -path ggee -path motex -path hcs;
 #X obj 34 98 declare -path domoTools;
 #X restore 270 207 pd declares;
 #X obj 10 149 l PdClient \$0 ClochesPieds;
@@ -448,15 +439,13 @@ master 0 -9 0 10 -258113 -1 -1 6583 1;
 #X obj 382 197 s /GAMME;
 #X obj 378 69 gammabs/GAMMEKBV /GAMME;
 #X obj 447 147 r /GAMME;
-#X floatatom 447 169 5 0 0 0 - - -;
+#X floatatom 447 169 5 0 0 0 - - - 0;
 #X msg 404 175 171;
 #X obj 382 151 loadbang;
 #X msg 372 174 145;
 #X obj 386 229 r CLOCK;
-#X obj 386 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 556 90 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 386 251 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 556 90 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 556 62 loadbang;
 #X obj 556 110 metro 600;
 #X obj 556 133 random 10;
@@ -488,7 +477,7 @@ master 0 -9 0 10 -258113 -1 -1 6583 1;
 #X obj 727 504 r /GAMME;
 #X msg 628 113 10;
 #X msg 660 113 0;
-#X floatatom 628 137 5 0 0 0 - - -;
+#X floatatom 628 137 5 0 0 0 - - - 0;
 #X obj 661 552 s /GAMME;
 #X msg 661 397 \$2 \$1;
 #X obj 742 373 != 0;
@@ -497,6 +486,7 @@ master 0 -9 0 10 -258113 -1 -1 6583 1;
 #X obj 617 60 r AutoGamme;
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;
+#X connect 6 0 30 0;
 #X connect 7 0 8 0;
 #X connect 8 0 5 0;
 #X connect 9 0 10 0;
