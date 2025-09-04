@@ -1,39 +1,29 @@
-#N canvas 507 346 419 410 10;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 2931 1;
-#N canvas 11 160 298 213 master 0;
+#N canvas 218 409 533 410 10;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 2931 1;
+#N canvas 62 152 298 262 master 1;
 #X obj 123 39 catch~ \$0-out;
 #X obj 140 111 *~;
 #X obj 175 91 pow 2;
 #X obj 175 112 * 4;
 #X obj 175 69 r \$0-vol-snd;
 #X obj 122 70 hip~ 50;
-#X obj 92 164 busrme 1;
-#X obj 139 145 busrme 2;
 #X msg 217 130 1;
+#X obj 120 158 stereoOut 5 6, f 20;
 #X connect 0 0 5 0;
 #X connect 1 0 7 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
 #X connect 4 0 2 0;
 #X connect 5 0 1 0;
-#X connect 8 0 7 1;
 #X restore 11 50 pd master;
 #N canvas 1165 315 132 154 Interface 0;
-#X obj 3 2 cnv 15 120 120 empty empty Myosotis 20 12 2 14 -225271 -66577
-0;
-#X obj 50 40 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 83 40 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 83 73 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 17 40 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 -262131
--1 -1 0 1;
-#X obj 50 73 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 -228992
--1 -1 0 1;
-#X obj 17 73 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 -262131
--1 -1 0 1;
+#X obj 3 2 cnv 15 120 120 empty empty Myosotis 20 12 2 14 #d8fcd8 #404040 0;
+#X obj 50 40 tgl 30 0 \$0-myoso3-snd \$0-myoso3-rcv 3 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 83 40 tgl 30 0 \$0-myoso4-snd \$0-myoso4-rcv 4 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 83 73 tgl 30 0 \$0-myoso5-snd \$0-myoso5-rcv 5 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 17 40 tgl 30 0 \$0-myoso2-snd \$0-myoso2-rcv 2 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
+#X obj 50 73 tgl 30 0 \$0-myoso0-snd \$0-myoso0-rcv E 13 15 1 10 #dce4fc #000000 #000000 0 1;
+#X obj 17 73 tgl 30 0 \$0-myoso1-snd \$0-myoso1-rcv 1 13 15 1 10 #fcfcc8 #000000 #000000 0 1;
 #X text 3 124 keys w x c v b;
 #X text 63 135 n;
 #X restore 11 12 pd Interface;
@@ -41,8 +31,7 @@
 #X obj 81 45 keyname;
 #X obj 81 70 pack f s;
 #X obj 81 91 spigot;
-#X obj 131 95 tgl 15 0 empty empty keyboard 0 -6 1 8 -241291 -1 -1
-0 1;
+#X obj 131 95 tgl 15 0 empty empty keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #X obj 156 97 r \$0-getkeyb;
 #X obj 81 150 route w x c v b n;
 #X obj 22 20 dispatch \$0-myoso 0 5;
@@ -59,10 +48,8 @@
 #X obj 160 357 s \$0-deb1time;
 #X obj 69 357 s \$0-deb0time;
 #X obj 123 323 init 20;
-#X obj 119 302 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 217 159 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 119 302 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 217 159 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 2 0;
@@ -88,23 +75,16 @@
 #X connect 20 0 19 0;
 #X connect 21 0 15 0;
 #X restore 11 31 pd interfguts;
-#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
--241291 -1 -1 0 1;
+#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #N canvas 1 110 283 124 unused 0;
 #X obj 11 33 apmaster \$0;
-#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
-;
-#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
--1;
-#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
-10.11.12.13.14.15.16 122 -6 1 6 -258699 -1 -262144;
-#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
-_1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
-0;
+#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 #14e814 #000000 #000000;
+#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000;
+#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv 10.11.12.13.14.15.16 122 -6 1 6 #fc2828 #000000 #fcfcfc;
+#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 #fcfcfc #000000 #000000 0;
 #N canvas 628 101 443 334 file_patt_but 0;
 #X msg 27 31 \$1;
-#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 203 67 sel 0 1;
 #X msg 203 88 color 0 22 22;
 #X msg 226 112 color 13 22 22;
@@ -117,7 +97,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X msg 20 165 _apfile_ load \$1;
 #X msg 148 165 _apfile_ store \$1;
 #X obj 203 138 s \$0-file_patt_but-rcv;
-#X symbolatom 237 306 0 0 0 0 - - -;
+#X symbolatom 237 306 0 0 0 0 - - - 0;
 #X obj 249 286 s \$0-apmaster-rcv;
 #X msg 249 266 loadin;
 #X obj 237 202 r \$0-_apfile_-snd;
@@ -163,21 +143,18 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 301 22 r ClochesMode;
 #X msg 301 85 1;
 #X msg 330 85 0;
-#X obj 301 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 301 108 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 301 127 s \$0-onoff;
 #X obj 301 43 route Myo;
 #X obj 301 64 route Nappe;
 #X obj 143 290 clone -s 0 voice 6 \$0;
 #X obj 144 312 lop~ 1500;
-#X obj 302 307 subrev;
-#SUB settings 0.395 0.63 67.5;
-#X obj 302 247 subecho;
-#SUB settings 5.67012 0.345 0.67;
-#X obj 49 119 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
--1 -1 0 1;
+#X obj 49 119 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 #fc2828 #000000 #000000 0 1;
 #X obj 49 146 r \$0-onoff;
 #X obj 49 169 switch~;
+#X obj 313 251 delwrite~ \$0-dm 1000;
+#X obj 313 280 delread~ \$0-dm 600;
+#X obj 314 327 rev3~ 97 96 3000 70;
 #X connect 6 0 7 0;
 #X connect 8 0 12 0;
 #X connect 9 0 10 0;
@@ -196,8 +173,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X connect 24 1 20 0;
 #X connect 25 0 26 0;
 #X connect 26 0 16 0;
-#X connect 26 0 28 0;
-#X connect 27 0 16 0;
-#X connect 28 0 16 0;
-#X connect 28 0 27 0;
-#X connect 30 0 31 0;
+#X connect 26 0 30 0;
+#X connect 28 0 29 0;
+#X connect 31 0 32 0;
+#X connect 32 0 16 0;

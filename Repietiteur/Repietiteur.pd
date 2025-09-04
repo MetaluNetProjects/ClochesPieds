@@ -1,6 +1,6 @@
 #N canvas 72 85 414 449 10;
 #X declare -path creb;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 2277 1;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 5077 1;
 #N canvas 97 557 308 291 master 0;
 #X obj 209 36 catch~ \$0-out;
 #X obj 172 115 *~;
@@ -13,14 +13,10 @@
 #X obj 149 72 hip~ 150;
 #X obj 41 157 subrev;
 #X obj 18 96 lop~ 2000;
-#X msg 234 136 3;
-#X floatatom 250 234 5 0 0 0 - - - 0;
-#X obj 172 158 busrme 4;
-#X msg 196 230 1;
-#X msg 229 233 2;
 #X obj 29 127 *~ 0.05;
+#X obj 173 142 stereoOut 7 8;
 #X connect 0 0 8 0;
-#X connect 1 0 13 0;
+#X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 3 0 10 0;
@@ -30,12 +26,8 @@
 #X connect 7 0 5 0;
 #X connect 8 0 1 0;
 #X connect 9 0 1 0;
-#X connect 10 0 16 0;
-#X connect 11 0 13 1;
-#X connect 12 0 13 1;
-#X connect 14 0 13 1;
-#X connect 15 0 13 1;
-#X connect 16 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
 #X restore 11 50 pd master;
 #N canvas 488 202 112 90 Interface 0;
 #X obj 45 97 tgl 30 0 \$0-s1-snd \$0-s1-rcv 1 13 15 1 10 #fcfcfc #000000 #000000 0 1;
@@ -1014,7 +1006,7 @@
 #N canvas 582 415 731 191 paroles 0;
 #X obj 5 277 switch~;
 #X obj 5 260 tgl 15 1 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 1 1;
-#N canvas 844 296 360 313 all_stuff 1;
+#N canvas 844 296 360 313 all_stuff 0;
 #N canvas 141 516 337 244 parolesdir 0;
 #X obj 9 5 r \$0-lang;
 #X obj 114 138 s \$0-parole_dir;
@@ -1327,7 +1319,7 @@
 #X connect 18 0 17 0;
 #X connect 20 0 2 0;
 #X restore 20 205 pd delfile;
-#N canvas 115 389 451 455 savetab 1;
+#N canvas 115 389 451 455 savetab 0;
 #X obj 105 161 loadbang;
 #X obj 105 142 bng 15 250 50 0 empty empty empty 20 8 0 8 #fcfcfc #000000 #000000;
 #X obj 105 184 symbol \$0-lesample;
@@ -2616,7 +2608,7 @@
 #X connect 9 0 8 0;
 #X connect 10 0 0 0;
 #X restore 20 56 pd editconfig;
-#N canvas 526 606 450 300 maindir 1;
+#N canvas 526 606 450 300 maindir 0;
 #X obj 20 13 loadbang;
 #X obj 85 58 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 84 183 s \$0-maindir;
@@ -2633,7 +2625,7 @@
 #X connect 5 0 7 0;
 #X connect 8 0 2 0;
 #X restore 20 16 pd maindir;
-#N canvas 366 82 607 595 update_all_new 1;
+#N canvas 366 82 607 595 update_all_new 0;
 #X obj 142 390 textfile;
 #X obj 118 570 print;
 #X obj 142 290 t b b;
@@ -3715,7 +3707,7 @@
 #X connect 23 1 2 0;
 #X restore 52 86 pd get_parole_name;
 #X obj 25 84 cnv 15 300 25 empty \$0-parole_namecnvsrcv nouvelle 2 12 0 16 #000000 #e8e828 0;
-#X obj 23 12 hdl 15 0 1 10 \$0-lang_radiosnd \$0-lang_radiorcv langue 20 -6 0 10 #d8fcd8 #000000 #000000 -1;
+#X obj 23 12 hdl 15 0 1 10 \$0-lang_radiosnd \$0-lang_radiorcv langue 20 -6 0 10 #d8fcd8 #000000 #000000 0;
 #N canvas 380 290 450 340 get_lang_name 0;
 #X obj 16 112 + 1;
 #X obj 16 92 unpack;

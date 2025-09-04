@@ -1,7 +1,7 @@
 #N canvas 328 433 499 534 10;
 #X obj 12 205 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 #fc2828 #000000 #000000 0 1;
 #X obj 12 232 r \$0-onoff;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 6739 1;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 5839 1;
 #X obj 12 255 switch~;
 #N canvas 866 106 298 213 master 0;
 #X obj 182 34 catch~ \$0-out;
@@ -15,6 +15,7 @@
 #X msg 80 69 200;
 #X obj 14 66 hip~ 200;
 #X obj 142 146 busrme 1;
+#X floatatom 226 96 5 0 0 0 - - - 0;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 2 0 9 0;
@@ -22,6 +23,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 1 1;
 #X connect 6 0 4 0;
+#X connect 6 0 11 0;
 #X connect 7 0 10 1;
 #X connect 8 0 9 1;
 #X connect 9 0 1 0;

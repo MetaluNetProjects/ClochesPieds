@@ -1,6 +1,6 @@
-#N canvas 602 43 517 375 10;
+#N canvas 592 35 517 375 10;
 #X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 6677 1;
-#N canvas 58 168 479 398 master 1;
+#N canvas 62 160 479 398 master 0;
 #X obj 43 38 catch~ \$0-out;
 #X obj 44 176 *~;
 #X obj 74 96 pow 2;
@@ -23,7 +23,7 @@
 #X obj 286 69 lop~ 6000;
 #X obj 308 196 lop~ 6000;
 #X obj 287 269 rev3~ 95 97 1000 80;
-#X obj 44 212 stereoOut 2 6, f 20;
+#X obj 44 212 stereoOut 5 6, f 20;
 #X connect 0 0 1 0;
 #X connect 1 0 22 0;
 #X connect 2 0 4 0;

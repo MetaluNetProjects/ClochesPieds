@@ -1,6 +1,5 @@
-#N canvas 793 242 415 325 10;
-#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 10 -258699 -1 -1 2090 1;
+#N canvas 113 585 415 325 10;
+#X obj 12 116 mknob 25 100 0 1 0 1 \$0-vol-snd \$0-vol-rcv vol -2 -6 1 10 #fc2828 #000000 #000000 3490 1;
 #N canvas 77 256 298 213 master 0;
 #X obj 175 7 catch~ \$0-out;
 #X obj 140 111 *~;
@@ -10,31 +9,25 @@
 #X obj 175 91 pow 2;
 #X obj 175 112 * 4;
 #X obj 175 69 r \$0-vol-snd;
-#X floatatom 209 129 5 0 0 0 - - -;
-#X obj 141 149 busrme 3;
+#X floatatom 209 129 5 0 0 0 - - - 0;
 #X obj 176 39 hip~ 20;
-#X connect 0 0 10 0;
-#X connect 1 0 9 0;
+#X obj 115 179 stereoOut 3 4;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
 #X connect 5 0 6 0;
 #X connect 6 0 1 1;
 #X connect 7 0 5 0;
-#X connect 8 0 9 1;
-#X connect 10 0 1 0;
+#X connect 9 0 1 0;
 #X restore 11 50 pd master;
 #N canvas 22 619 220 70 Interface 0;
-#X obj 2 2 tgl 30 0 \$0-s1-snd \$0-s1-rcv I 13 15 1 10 -262144 -1 -1
-0 1;
-#X obj 34 2 tgl 30 0 \$0-s2-snd \$0-s2-rcv PO 7 15 1 10 -262144 -1
--1 0 1;
-#X obj 66 2 tgl 30 0 \$0-s3-snd \$0-s3-rcv PO 7 15 1 10 -262144 -1
--1 0 1;
-#X obj 98 2 tgl 30 0 \$0-s4-snd \$0-s4-rcv TAM 2 15 1 10 -262144 -1
--1 0 1;
-#X obj 132 2 tgl 30 0 \$0-st-snd \$0-st-rcv hippopotame 1 15 1 8 -262131
--1 -1 0 1;
+#X obj 2 2 tgl 30 0 \$0-s1-snd \$0-s1-rcv I 13 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 34 2 tgl 30 0 \$0-s2-snd \$0-s2-rcv PO 7 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 66 2 tgl 30 0 \$0-s3-snd \$0-s3-rcv PO 7 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 98 2 tgl 30 0 \$0-s4-snd \$0-s4-rcv TAM 2 15 1 10 #fcfcfc #000000 #000000 0 1;
+#X obj 132 2 tgl 30 0 \$0-st-snd \$0-st-rcv hippopotame 1 15 1 8 #fcfcc8 #000000 #000000 0 1;
 #X text 7 35 keyboard: w x c v b;
 #X restore 11 12 pd Interface;
 #N canvas 447 122 398 425 interfguts 0;
@@ -42,8 +35,7 @@
 #X obj 59 67 pack f s;
 #X msg 59 118 \$2 \$1;
 #X obj 59 88 spigot;
-#X obj 109 92 tgl 15 0 empty empty keyboard 0 -6 1 8 -241291 -1 -1
-0 1;
+#X obj 109 92 tgl 15 0 empty empty keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #X obj 57 14 dispatch \$0-s 1 4;
 #X obj 59 139 route w x c v b;
 #X obj 174 171 s \$0-st-rcv;
@@ -87,23 +79,16 @@
 #X connect 22 0 20 0;
 #X connect 23 0 19 0;
 #X restore 11 31 pd interfguts;
-#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8
--241291 -1 -1 0 1;
+#X obj 12 80 tgl 15 0 \$0-getkeyb \$0-getkeyb-rcv keyboard 0 -6 1 8 #e8e828 #000000 #000000 0 1;
 #N canvas 1 135 283 124 unused 0;
 #X obj 11 33 apmaster \$0;
-#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 -24198 -1 -1
-;
-#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 -258699 -1
--1;
-#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
-10.11.12.13.14.15.16 122 -6 1 6 -258699 -1 -262144;
-#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
-_1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
-0;
+#X obj 11 16 bng 15 250 50 0 empty empty empty 0 -6 0 8 #14e814 #000000 #000000;
+#X obj 83 15 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fc2828 #000000 #000000;
+#X obj 11 63 bng 12 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv 10.11.12.13.14.15.16 122 -6 1 6 #fc2828 #000000 #fcfcfc;
+#X obj 25 63 hradio 12 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 #fcfcfc #000000 #000000 0;
 #N canvas 628 101 443 334 file_patt_but 0;
 #X msg 27 31 \$1;
-#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
-;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000 0 1;
 #X obj 203 67 sel 0 1;
 #X msg 203 88 color 0 22 22;
 #X msg 226 112 color 13 22 22;
@@ -116,7 +101,7 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X msg 20 165 _apfile_ load \$1;
 #X msg 148 165 _apfile_ store \$1;
 #X obj 203 138 s \$0-file_patt_but-rcv;
-#X symbolatom 237 306 0 0 0 0 - - -;
+#X symbolatom 237 306 0 0 0 0 - - - 0;
 #X obj 249 286 s \$0-apmaster-rcv;
 #X msg 249 266 loadin;
 #X obj 237 202 r \$0-_apfile_-snd;
@@ -162,14 +147,12 @@ _1._2._3_4._5._6_7._8.9.10.11.12.13.14.15.16 0 -6 2 9 -262144 -1 -1
 #X obj 316 31 r ClochesMode;
 #X msg 316 94 1;
 #X msg 345 94 0;
-#X obj 316 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 316 117 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 316 52 route Syllabo;
 #X obj 316 73 route Combat;
 #X obj 316 136 s \$0-onoff;
 #X obj 202 52 r \$0-onoff;
-#X obj 13 184 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 -258699
--1 -1 0 1;
+#X obj 13 184 tgl 20 0 \$0-onoff \$0-onoff onoff 0 -6 0 12 #fc2828 #000000 #000000 0 1;
 #X obj 13 211 r \$0-onoff;
 #X obj 13 234 switch~;
 #X connect 6 1 17 0;
