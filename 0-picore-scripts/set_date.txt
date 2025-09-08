@@ -1,0 +1,2 @@
+date +%m%d%H%M%Y
+sudo date 090412592025

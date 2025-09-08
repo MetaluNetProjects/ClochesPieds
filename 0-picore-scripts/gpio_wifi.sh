@@ -36,8 +36,16 @@ function change_mode {
         #sudo wpa_supplicant -B -Dnl80211 -iwlan0 -c$SCRIPTS_PATH/wpa_supplicant.conf
         #sleep 2
         #sudo iwconfig wlan0 essid Domozic
-        sudo /usr/local/bin/wifi.sh -a
-        sudo killall node
+        while sudo [ $MODE == CLI_DOMO ]; do
+            if `iwconfig wlan0 | grep -q Domozic`; then
+                echo connected to Domozic
+            else
+                echo NOT CONNECTED
+                sudo wifi.sh -a
+                sleep 2
+            fi
+            sleep 2
+        done
     fi
 }
 

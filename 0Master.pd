@@ -1,4 +1,4 @@
-#N canvas 1081 95 532 466 10;
+#N canvas 1081 95 529 466 10;
 #X declare -lib zexy;
 #X declare -path iemlib -lib iemlib -lib iemlib1;
 #X declare -path abs;
@@ -536,6 +536,9 @@
 #X connect 36 0 24 0;
 #X connect 37 0 0 0;
 #X restore 393 348 pd autogamme;
+#X obj 303 8 r pd;
+#X obj 303 31 route dsp;
+#X msg 303 54 set \$1;
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;
 #X connect 6 0 30 0;
@@ -575,3 +578,6 @@
 #X connect 50 0 54 0;
 #X connect 51 0 52 0;
 #X connect 54 0 53 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 58 0 5 0;

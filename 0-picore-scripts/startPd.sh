@@ -5,10 +5,10 @@
 #echo $MAIN_PATCH
 #exit
 
-APP_PATH=$( dirname -- "$( readlink -f -- "$0"; )"; )
-source $APP_PATH/pd_config.txt
+#APP_PATH=$( dirname -- "$( readlink -f -- "$0"; )"; )
+source /mnt/mmcblk0p2/App/pd_config.txt
 
-ln -s $APP_PATH/ClochesPieds/WAVS ~/Cloches
+#ln -s $APP_PATH/ClochesPieds/WAVS ~/Cloches
 
 sudo killall pd
 
@@ -27,11 +27,14 @@ amixer -c 1 cset numid=6 28,28
 
 sleep 5
 
+export PATH=/mnt/mmcblk0p2/App:$PATH
+
 screen -S OSC -d -m /mnt/mmcblk0p2/App/ClochesPieds/1TELECO_OSC/runOSC.sh
 
 screen -S LINK -d -m /mnt/mmcblk0p2/App/ClochesPieds/domoTools/domonet/Carabiner/rPi/Carabiner
 
-screen -S PD -d -m sudo prlimit --rtprio=99 /home/tc/src/pure-data-ant1r-git/bin/pd -nogui $PDDECLARE -open $MAIN_PATCH
+#screen -S PD -d -m sudo prlimit --rtprio=99 /home/tc/src/pure-data-ant1r-git/bin/pd -nogui $PDDECLARE -open $MAIN_PATCH
+screen -S PD -d -m $PDBIN -nogui $PDDECLARE -open $MAIN_PATCH
 
 screen -S WIFI -d -m /mnt/mmcblk0p2/App/ClochesPieds/0-picore-scripts/gpio_wifi.sh
 

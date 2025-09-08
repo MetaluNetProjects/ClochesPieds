@@ -1,4 +1,4 @@
-#N canvas 449 409 1244 576 10;
+#N canvas 175 278 1249 536 10;
 #X obj 33 30 netreceive -u -b 18080;
 #X obj 33 50 oscparse;
 #X obj 32 277 netsend -u -b;
@@ -261,6 +261,17 @@
 #X obj 1087 275 f;
 #X obj 709 268 f;
 #X obj 839 261 f;
+#X obj 1003 355 r fromTeleco;
+#X obj 1116 403 r OSCRefresh;
+#X obj 1003 401 change -1;
+#X obj 1088 450 s toTeleco;
+#X obj 1088 404 f;
+#X obj 1003 378 route DSPon;
+#X obj 1088 355 r pd;
+#X obj 1088 378 route dsp;
+#X msg 1088 427 DSPon \$1;
+#X msg 1003 424 dsp \$1;
+#X obj 1003 449 s pd;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 2 0 5 0;
@@ -359,3 +370,12 @@
 #X connect 108 0 105 0;
 #X connect 109 0 77 0;
 #X connect 110 0 74 0;
+#X connect 111 0 116 0;
+#X connect 112 0 115 0;
+#X connect 113 0 120 0;
+#X connect 115 0 119 0;
+#X connect 116 0 113 0;
+#X connect 117 0 118 0;
+#X connect 118 0 115 0;
+#X connect 119 0 114 0;
+#X connect 120 0 121 0;

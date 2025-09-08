@@ -1,0 +1,5 @@
+APP_PATH=$( dirname -- "$( readlink -f -- "$0"; )"; )
+PDBIN=$APP_PATH/pure-data/bin/pd
+PDDECLARE="-path $APP_PATH/externals/moonlib -path $APP_PATH/externals/sublib_0.3.0 -lib $APP_PATH/externals/sublib_0.3.0/sub"
+MAIN_PATCH=$APP_PATH/ClochesPieds/0Master.pd
+echo $MAIN_PATCH
